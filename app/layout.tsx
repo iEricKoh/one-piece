@@ -20,7 +20,6 @@ export const metadata: Metadata = {
   authors: [{ name: "Eric Koh", url: "https://www.ierickoh.com/" }],
   creator: "Eric Koh",
   publisher: "Eric Koh",
-  colorScheme: "dark",
 }
 
 export default function RootLayout({

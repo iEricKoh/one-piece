@@ -1,11 +1,5 @@
 import getIntl from "@/lib/intl"
-import {
-  MdEmail,
-  MdLocationOn,
-  MdMap,
-  MdMyLocation,
-  MdPhoneIphone,
-} from "react-icons/md"
+import { MdEmail, MdLocationOn, MdPhoneIphone } from "react-icons/md"
 import { Title } from "./Title"
 export const Info = async () => {
   const intl = await getIntl("cv")
