@@ -9,7 +9,7 @@ export const SectionHeader = ({
 }) => {
   return (
     <>
-      <h4 className="mb-2 text-3xl flex items-center">
+      <h4 className="mb-2 text-xl md:text-3xl flex items-center">
         <div className="mr-3">{icon}</div> {heading}
       </h4>
 

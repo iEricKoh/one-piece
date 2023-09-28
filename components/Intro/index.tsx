@@ -1,8 +1,12 @@
 "use client"
 
+import i18nConfig from "@/i18nConfig"
+import { useCurrentLocale } from "next-i18n-router/client"
 import { TypeAnimation } from "react-type-animation"
 
 export const Intro = () => {
+  // const locale = useCurrentLocale(i18nConfig)
+
   return (
     <TypeAnimation
       cursor={false}

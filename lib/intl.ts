@@ -1,3 +1,5 @@
+"server-only"
+
 import i18nConfig from "@/i18nConfig"
 import { createIntl } from "@formatjs/intl"
 import { currentLocale } from "next-i18n-router"

@@ -1,11 +1,5 @@
 import getIntl from "@/lib/intl"
-import {
-  MdEmail,
-  MdLocationOn,
-  MdMap,
-  MdMyLocation,
-  MdPhoneIphone,
-} from "react-icons/md"
+import { MdEmail, MdLocationOn, MdPhoneIphone } from "react-icons/md"
 import { Title } from "./Title"
 export const Info = async () => {
   const intl = await getIntl("cv")
@@ -13,7 +7,7 @@ export const Info = async () => {
   return (
     <div className="flex flex-col md:flex-row justify-between mb-16">
       <hgroup>
-        <h1 className="text-5xl md:text-8xl font-bold fullname uppercase">
+        <h1 className="text-5xl md:text-8xl font-bold uppercase">
           {intl.formatMessage({ id: "fullname" })}
         </h1>
         <h4 className="md:text-2xl md:text-center mt-2">
@@ -25,22 +19,22 @@ export const Info = async () => {
           className="flex items-center"
           href="mailto:akaerickoh@gmail.com?subject=What's up"
         >
-          <div className="mr-3">
+          <div className="mr-2 md:mr-3">
             <MdEmail />
           </div>
           <span>akaerickoh@gmail.com</span>
         </a>
         <a className="flex items-center" href="tel:+8616628560990">
-          <div className="mr-3">
+          <div className="mr-2 md:mr-3">
             <MdPhoneIphone />
           </div>
           <span>+86 16628560990</span>
         </a>
         <div className="flex items-center">
-          <div className="mr-3">
+          <div className="mr-2 md:mr-3">
             <MdLocationOn />
           </div>
-          <span>Shanghai, China</span>
+          <span>{intl.formatMessage({ id: "address" })}</span>
         </div>
       </address>
     </div>
