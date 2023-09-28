@@ -1,4 +1,12 @@
-export const SectionHeader = ({ icon, heading }) => {
+import { ReactElement } from "react"
+
+export const SectionHeader = ({
+  icon,
+  heading,
+}: {
+  icon: ReactElement
+  heading: string
+}) => {
   return (
     <>
       <h4 className="mb-2 text-3xl flex items-center">

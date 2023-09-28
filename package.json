@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev & npm run ts:watch",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "ts:watch": "tsc --noEmit --incremental --preserveWatchOutput --pretty --watch"
   },
   "dependencies": {
     "@formatjs/intl": "^2.9.3",

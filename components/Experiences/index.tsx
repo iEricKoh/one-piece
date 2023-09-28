@@ -1,14 +1,15 @@
-import Image from "next/image"
-import { Fragment, Suspense } from "react"
-import { FaBeer, FaCodepen, FaTools } from "react-icons/fa"
-
-import { headers } from "next/headers"
-import { MdPhonelinkRing } from "react-icons/md"
+import { Fragment } from "react"
+import { FaCodepen } from "react-icons/fa"
 import TechStack from "../TechStack"
-import { currentLocale } from "next-i18n-router"
 import { AnimatedLabel } from "../AnimatedLabel"
 import { SectionHeader } from "../SectionHeader"
-export const Experiences = ({ experiences }) => {
+import { Experience } from "@/interfaces/experience"
+
+export const Experiences = ({
+  experiences,
+}: {
+  experiences: Array<Experience>
+}) => {
   return (
     <>
       <SectionHeader icon={<FaCodepen />} heading="EXPERIENCE" />

@@ -3,7 +3,7 @@
 import { useSpring, animated } from "@react-spring/web"
 import { useInView } from "react-intersection-observer"
 
-export const AnimatedLabel = ({ value }) => {
+export const AnimatedLabel = ({ value }: { value: string }) => {
   const { ref, inView } = useInView({ triggerOnce: true })
 
   const style = useSpring({
