@@ -34,8 +34,9 @@ body {
     #0190cd 70%,
     #764ada 80%
   );
-  background-size: 500% auto;
-  animation: animatedGradient 5s ease-in-out infinite;
+  background-size: 230% auto;
+  /* background-size: 500% auto; */
+  /* animation: animatedGradient 5s ease-in-out infinite; */
   animation-play-state: running;
 }
 

@@ -1,9 +1,8 @@
-import LanguageChanger from "@/components/LanguageChanger"
 import Graph from "@/components/Graph"
 import { Experiences } from "@/components/Experiences"
 import experiences from "./data.json"
 import { Info } from "@/components/Info"
-import { FaGithub, FaTerminal, FaTools } from "react-icons/fa"
+import { FaGithub } from "react-icons/fa"
 import { SectionHeader } from "@/components/SectionHeader"
 import { HelloWorld } from "@/components/HelloWorld"
 
@@ -24,11 +23,6 @@ export default async function Home() {
           </div>
         </div>
       </div>
-      {/* <LanguageChanger /> */}
-      {/* <div className="max-w-screen-xl m-auto"> */}
-      {/*   <div className="min-w-full"> */}
-      {/*   </div> */}
-      {/* </div> */}
     </main>
   )
 }

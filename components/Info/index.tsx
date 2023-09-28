@@ -1,16 +1,17 @@
 import getIntl from "@/lib/intl"
-import { MdContactPhone, MdEmail, MdPhone, MdPhoneIphone } from "react-icons/md"
+import { MdEmail, MdPhoneIphone } from "react-icons/md"
+import { Title } from "./Title"
 export const Info = async () => {
   const intl = await getIntl("cv")
 
   return (
     <div className="flex flex-col md:flex-row justify-between mb-16">
       <section>
-        <div className="text-5xl md:text-8xl font-bold fullname">
+        <h1 className="text-5xl md:text-8xl font-bold fullname uppercase">
           {intl.formatMessage({ id: "fullname" })}
-        </div>
+        </h1>
         <div className="md:text-2xl md:text-center mt-2">
-          {intl.formatMessage({ id: "title" })}
+          <Title />
         </div>
       </section>
       <ul className="mt-5 md:mt-0 md:text-lg text-right md:text-left">
