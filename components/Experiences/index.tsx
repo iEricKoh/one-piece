@@ -22,15 +22,15 @@ export const Experiences = ({
                   {e.company}
                 </div>
               </div>
-              <div className="text-sm md:text-left text-right">
+              <time className="text-sm md:text-left text-right">
                 {e.duration}
-              </div>
+              </time>
             </div>
             <div className="col-span-3 md:col-span-2 mb-12 md:mb-0">
               <div className="md:font-bold text-2xl md:text-3xl mb-5">
                 <AnimatedLabel value={e.position} />
               </div>
-              <div className="row-span-2 col-span-2 ...">
+              <div className="row-span-2 col-span-2">
                 <ul>
                   {e.desc.map((desc, index) => (
                     <li key={index}>

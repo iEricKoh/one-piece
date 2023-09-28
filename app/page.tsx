@@ -1,11 +1,10 @@
-import LanguageChanger from "@/components/LanguageChanger"
 import Graph from "@/components/Graph"
 import { Experiences } from "@/components/Experiences"
 import experiences from "./data.json"
 import { Info } from "@/components/Info"
-import { FaGithub, FaTerminal, FaTools } from "react-icons/fa"
+import { FaGithub } from "react-icons/fa"
 import { SectionHeader } from "@/components/SectionHeader"
-import { HelloWorld } from "@/components/HelloWorld"
+import { Intro } from "@/components/Intro"
 
 export default async function Home() {
   return (
@@ -16,19 +15,14 @@ export default async function Home() {
 
         <SectionHeader icon={<FaGithub />} heading="SKILLS" />
         <div className="grid gap-8 md:grid-cols-3 md:gap-14 md:mt-10 min-w-full">
-          <div>
-            <HelloWorld />
-          </div>
+          <section>
+            <Intro />
+          </section>
           <div className="col-span-2">
             <Graph />
           </div>
         </div>
       </div>
-      {/* <LanguageChanger /> */}
-      {/* <div className="max-w-screen-xl m-auto"> */}
-      {/*   <div className="min-w-full"> */}
-      {/*   </div> */}
-      {/* </div> */}
     </main>
   )
 }

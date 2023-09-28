@@ -34,8 +34,9 @@ body {
     #0190cd 70%,
     #764ada 80%
   );
-  background-size: 500% auto;
-  /* animation: animatedGradient 3s ease-in-out infinite; */
+  background-size: 230% auto;
+  /* background-size: 500% auto; */
+  /* animation: animatedGradient 5s ease-in-out infinite; */
   animation-play-state: running;
 }
 
@@ -74,11 +75,4 @@ body {
   100% {
     background-position: 600px;
   }
-}
-
-.hello {
-  max-width: 100%; /* Adjust the value as needed */
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis; /* Optionally add ellipsis for long text */
 }
