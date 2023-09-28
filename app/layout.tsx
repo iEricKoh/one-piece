@@ -1,6 +1,8 @@
 import "./globals.css"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
+import { ThemeProvider } from "./theme-provider"
+import { Navbar } from "@/components/Navbar"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -16,9 +18,9 @@ export const metadata: Metadata = {
     "TypeScript",
   ],
   authors: [{ name: "Eric Koh", url: "https://www.ierickoh.com/" }],
-  colorScheme: "dark",
   creator: "Eric Koh",
   publisher: "Eric Koh",
+  colorScheme: "dark",
 }
 
 export default function RootLayout({
@@ -28,7 +30,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className}  bg-white dark:bg-slate-900`}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <Navbar />
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   )
 }

@@ -13,7 +13,7 @@ export const Info = async () => {
   return (
     <div className="flex flex-col md:flex-row justify-between mb-16">
       <hgroup>
-        <h1 className="text-5xl md:text-8xl font-bold fullname uppercase">
+        <h1 className="text-5xl md:text-8xl font-bold uppercase">
           {intl.formatMessage({ id: "fullname" })}
         </h1>
         <h4 className="md:text-2xl md:text-center mt-2">

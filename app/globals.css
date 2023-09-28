@@ -3,41 +3,44 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  /* --foreground-rgb: 0, 0, 0; */
+  /* --background-rgb: 255, 255, 255; */
+  /* --background-start-rgb: 214, 219, 220; */
+  /* --background-end-rgb: 255, 255, 255; */
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  /* :root { */
+  /*   --foreground-rgb: 255, 255, 255; */
+  /*   --background-rgb: 0, 0, 0; */
+  /*   --background-start-rgb: 0, 0, 0; */
+  /*   --background-end-rgb: 0, 0, 0; */
+  /* } */
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: rgb(var(--background-rgb));
+  /* background: linear-gradient( */
+  /*     to bottom, */
+  /*     transparent, */
+  /*     rgb(var(--background-end-rgb)) */
+  /*   ) */
+  /*   rgb(var(--background-start-rgb)); */
 }
 
 .app {
-  background: linear-gradient(
-    to right,
-    #7953cd 20%,
-    #00affa 30%,
-    #0190cd 70%,
-    #764ada 80%
-  );
-  background-size: 230% auto;
+  /* background: linear-gradient( */
+  /*   to right, */
+  /*   #7953cd 20%, */
+  /*   #00affa 30%, */
+  /*   #0190cd 70%, */
+  /*   #764ada 80% */
+  /* ); */
+  /* background-size: 230% auto; */
   /* background-size: 500% auto; */
   /* animation: animatedGradient 5s ease-in-out infinite; */
-  animation-play-state: running;
+  /* animation-play-state: running; */
 }
 
 .app:hover {
@@ -50,29 +53,5 @@ body {
   }
   100% {
     background-position: 100% 50%;
-  }
-}
-
-.fullname {
-  background: linear-gradient(
-    to right,
-    hsl(255, 0%, 80%) 0,
-    hsl(255, 0%, 100%) 10%,
-    hsl(255, 0%, 80%) 20%
-  );
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shine 3s infinite linear;
-}
-
-@keyframes shine {
-  0% {
-    background-position: 0;
-  }
-  60% {
-    background-position: 600px;
-  }
-  100% {
-    background-position: 600px;
   }
 }

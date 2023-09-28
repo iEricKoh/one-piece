@@ -9,7 +9,7 @@ import { Intro } from "@/components/Intro"
 export default async function Home() {
   return (
     <main className="app min-h-screen px-4 md:px-10">
-      <div className="max-w-screen-xl m-auto py-10 md:py-20">
+      <div className="max-w-screen-xl m-auto py-0 md:py-20">
         <Info />
         <Experiences experiences={experiences} />
 
