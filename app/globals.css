@@ -25,3 +25,60 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.app {
+  background: linear-gradient(
+    to right,
+    #7953cd 20%,
+    #00affa 30%,
+    #0190cd 70%,
+    #764ada 80%
+  );
+  background-size: 500% auto;
+  /* animation: animatedGradient 3s ease-in-out infinite; */
+  animation-play-state: running;
+}
+
+.app:hover {
+  animation-play-state: paused;
+}
+
+@keyframes animatedGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.fullname {
+  background: linear-gradient(
+    to right,
+    hsl(255, 0%, 80%) 0,
+    hsl(255, 0%, 100%) 10%,
+    hsl(255, 0%, 80%) 20%
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s infinite linear;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0;
+  }
+  60% {
+    background-position: 600px;
+  }
+  100% {
+    background-position: 600px;
+  }
+}
+
+.hello {
+  max-width: 100%; /* Adjust the value as needed */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; /* Optionally add ellipsis for long text */
+}

@@ -1,0 +1,57 @@
+[
+  {
+    "company": "Baopals",
+    "duration": "Jul 2017 - May 2023",
+    "position": "Senior Front End Developer",
+    "desc": [
+      "Leading, mentoring and providing technical guidance to a team of passionate front-end developers.",
+      "Responsible for code quality and identifying improvements to workflow and operations.",
+      "Overseeing project completion."
+    ],
+    "techStack": ["React", "Redux", "Flutter", "Node.js", "AWS"]
+  },
+  {
+    "company": "DC Asia",
+    "duration": "Sep 2016 - Jun 2017",
+    "position": "Full Stack Developer",
+    "desc": [
+      "Developed responsive & cross browser web apps.",
+      "Developed & delivered the HTML, CSS & JS architecture.",
+      "Worked closely with clients from conception to completion."
+    ],
+    "techStack": ["Angular 2", "React Native", "Node.js", "Koa", "MongoDB"]
+  },
+  {
+    "company": "Video++",
+    "duration": "Jan 2016 - Sep 2016",
+    "position": "Senior Front End Developer",
+    "desc": [
+      "Consulted on CSS, solving a lot of complex issues.",
+      "Responsible for the RESTful API development.",
+      "Implemented all the UI into resuable Angular components."
+    ],
+    "techStack": ["Angular", "Node.js", "Express", "Redis", "MongoDB"]
+  },
+  {
+    "company": "Tradesparq",
+    "duration": "Sep 2014 - Jan 2016",
+    "position": "Front End Developer",
+    "desc": [
+      "Designed & built cross browser websites.",
+      "Produced weekly newsletters & managed email campaigns.",
+      "Developed a strong knowledge of accessibility & usability."
+    ],
+    "techStack": ["Knockout.js", "Angular", "Bootstrap", "Node.js", "Docker"]
+  },
+  {
+    "company": "NCS",
+    "duration": "Nov 2012 - Sep 2014",
+    "position": "Software Engineer",
+    "desc": [
+      "Contributor and maintainer of SSOE project.",
+      "Developed semantic HTML, CSS, and JS for several projects.",
+      "Improved project performance."
+    ],
+    "techStack": ["Java", "Spring", "Structs", "iBATIS", "SQL Server", "JBoss"]
+  }
+]
