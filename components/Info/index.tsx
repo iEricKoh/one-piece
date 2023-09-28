@@ -19,22 +19,22 @@ export const Info = async () => {
           className="flex items-center"
           href="mailto:akaerickoh@gmail.com?subject=What's up"
         >
-          <div className="mr-3">
+          <div className="mr-2 md:mr-3">
             <MdEmail />
           </div>
           <span>akaerickoh@gmail.com</span>
         </a>
         <a className="flex items-center" href="tel:+8616628560990">
-          <div className="mr-3">
+          <div className="mr-2 md:mr-3">
             <MdPhoneIphone />
           </div>
           <span>+86 16628560990</span>
         </a>
         <div className="flex items-center">
-          <div className="mr-3">
+          <div className="mr-2 md:mr-3">
             <MdLocationOn />
           </div>
-          <span>Shanghai, China</span>
+          <span>{intl.formatMessage({ id: "address" })}</span>
         </div>
       </address>
     </div>

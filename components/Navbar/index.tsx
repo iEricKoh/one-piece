@@ -22,7 +22,7 @@ export const Navbar = () => {
             <a
               href="https://github.com/iEricKoh"
               target="_blank"
-              className="hover:text-blue-600 text-2xl"
+              className="p-2 rounded-full hover:bg-gray-200 transition-all text-2xl"
             >
               <FaGithub />
             </a>
