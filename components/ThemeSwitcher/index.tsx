@@ -16,7 +16,7 @@ export const ThemeSwitcher = () => {
 
   return (
     <button
-      className="p-2 rounded-full hover:bg-gray-200 transition-all"
+      className="p-2 rounded-full hover:bg-gray-200 transition-all dark:hover:bg-orange-400"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
       {theme === "light" ? (
