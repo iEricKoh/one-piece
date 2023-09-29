@@ -41,7 +41,7 @@ export const Experiences = async () => {
                 <ul>
                   {e.desc.map((desc, index) => (
                     <li key={index}>
-                      <AnimatedLabel value={desc} />
+                      <AnimatedLabel className="my-3" value={desc} prefix="-" />
                     </li>
                   ))}
                 </ul>
