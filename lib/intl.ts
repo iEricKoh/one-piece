@@ -3,12 +3,19 @@
 import i18nConfig from "@/i18nConfig"
 import { createIntl } from "@formatjs/intl"
 import { currentLocale } from "next-i18n-router"
+import { MessageFormatElement } from "react-intl"
 
-export default async function getIntl(namespace: string) {
-  const locale = currentLocale()
+const getMessages = async (
+  lang: string,
+): Promise<Record<string, MessageFormatElement[]> | Record<string, string>> => {
+  return (await import(`@/i18n/${lang}.json`)).default
+}
+
+export default async function getIntl() {
+  const lang = currentLocale() || i18nConfig.defaultLocale
 
   return createIntl({
-    locale: locale ?? i18nConfig.defaultLocale,
-    messages: await import(`@/i18n/${locale}/${namespace}.json`),
+    locale: lang,
+    messages: await getMessages(lang),
   })
 }
