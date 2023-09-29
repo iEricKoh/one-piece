@@ -1,19 +1,13 @@
 "use client"
 
-import { useSpring, animated } from "@react-spring/web"
-import { useInView } from "react-intersection-observer"
+import { useTextInView } from "@/hooks/useTextInView"
+import { animated } from "@react-spring/web"
 
 export const AnimatedLabel = ({ value }: { value: string }) => {
-  const { ref, inView } = useInView({ triggerOnce: true })
-
-  const style = useSpring({
-    opacity: inView ? 1 : 0,
-    threshold: 1,
-    delay: 180,
-  })
+  const [ref, springs] = useTextInView()
 
   return (
-    <animated.div ref={ref} style={style} className="my-3">
+    <animated.div ref={ref} style={springs} className="my-3">
       - {value}
     </animated.div>
   )

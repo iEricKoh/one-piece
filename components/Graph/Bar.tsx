@@ -1,8 +1,8 @@
-import { useSpring, animated } from "@react-spring/web"
-import { useInView } from "react-intersection-observer"
+import { useSpring, animated, useInView } from "@react-spring/web"
 
 export const Bar = ({ label, width }: { width: number; label: string }) => {
-  const { ref, inView } = useInView()
+  const [ref, inView] = useInView()
+
   const style = useSpring({
     width: inView ? `${width}%` : "0%",
     borderRadius: "5px",
