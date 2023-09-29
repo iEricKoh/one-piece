@@ -22,11 +22,11 @@ export default async function Home() {
           }
           heading={intl.formatMessage({ id: "skills" })}
         />
-        <div className="grid gap-8 md:grid-cols-3 md:gap-14 md:mt-10 min-w-full">
-          <section>
+        <div className="grid gap-y-8 md:grid-cols-3 md:gap-14 md:mt-10 min-w-full">
+          <section className="col-span-3 md:col-span-1">
             <Intro />
           </section>
-          <div className="col-span-2">
+          <div className="col-span-3 md:col-span-2">
             <Graph />
           </div>
         </div>
