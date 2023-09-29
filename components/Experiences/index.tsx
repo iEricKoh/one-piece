@@ -12,7 +12,7 @@ export const Experiences = async () => {
 
   const locale = currentLocale()
 
-  const experiences = await import(`./${locale}.json`)
+  const experiences: Array<Experience> = await import(`./${locale}.json`)
 
   return (
     <>
