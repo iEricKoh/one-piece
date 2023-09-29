@@ -12,11 +12,11 @@
     "techStack": ["React", "Redux", "Flutter", "Node.js", "AWS"],
     "projects": [
       {
-        "name": "Web",
+        "name": "Shopping Platform(Web)",
         "desc": "Independently crafted a React-based SPA from the ground up, seamlessly integrating Redux Observable and Bootstrap to elevate both the user interface and overall performance."
       },
       {
-        "name": "App",
+        "name": "Shopping Platform(App)",
         "desc": "Solely engineered a cross-platform mobile application using Flutter and Riverpod, ensuring a flawless user experience and functionality across different platforms."
       },
       {
@@ -58,7 +58,7 @@
     "techStack": ["Angular", "Node.js", "Express", "Redis", "MongoDB"],
     "projects": [
       {
-        "name": "Web Dashboard",
+        "name": "Dashboard Portal",
         "desc": "Created a dashboard web application with Angular to display statistics data primarily through charts."
       },
       {
@@ -79,7 +79,7 @@
     "techStack": ["Knockout.js", "Angular", "Bootstrap", "Node.js", "Docker"],
     "projects": [
       {
-        "name": "Web Platform",
+        "name": "Social Platform",
         "desc": "Focused on implementing reusable components throughout the Tradesparq site to enhance functionality and maintainability."
       },
       {
