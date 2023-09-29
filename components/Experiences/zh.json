@@ -4,19 +4,25 @@
     "duration": "2017-07 ~ 2023-05",
     "position": "高级前端工程师",
     "desc": [
+      "多个项目的架构搭建以及从 0-1 的完成到上线发布",
       "带领并且指导团队成员之间的日常开发工作，追踪项目完成进度",
-      "日常的项目代码审查与项目重构",
-      "Baopals 平台的核心贡献者"
+      "日常的项目代码审查与维护",
+      "参与产品设计，解决多个疑难问题，技术团队中的唯一中国人"
     ],
     "projects": [
       {
         "name": "Web",
-        "desc": "一个 Web 购物平台，帮助生活在中国的老外购买淘宝/京东上的商品。由我从 0-1 完成并上线，使用 React + Redux Observable + Bootstrap."
+        "desc": "一个购物平台，帮助生活在中国的老外购买淘宝/京东上的商品。由我从 0-1 独立完成并上线，使用 React + Redux Observable + Bootstrap."
       },
       {
         "name": "App",
         "desc": "实现了与 Web 平台一样的功能，由我从 0-1 实现并且最终发布到 App Store. 使用 Flutter + Riverpod."
       },
+      {
+        "name": "API 服务器",
+        "desc": "一个使用 Node.js + Koa 实现了与淘宝开放平台的接口对接，负责提供商品相关 API。另外一个使用 Go + Gin 实现了与 Google 翻译和 ChatGPT 的接口对接，负责对外开放翻译 API."
+      },
+
       {
         "name": "Chrome 浏览器插件",
         "desc": "帮助公司内部同事完成日常自动化流程，提高工作效率，减少重复性工作。由我从 0-1 完成，使用 Vanilla JS + Vite."
@@ -36,11 +42,11 @@
     "projects": [
       {
         "name": "静态网站生成器",
-        "desc": "一个功能与 weex.com 相似的平台，由我从 0 - 1 完成，使用 Angular 2 + RxJS 开发,核心涉及到实现一个富文本编辑器。"
+        "desc": "一个功能与 weex.com 相似的平台，由我从 0 - 1 完成，使用 Angular 2 + RxJS 开发，核心涉及到实现一个富文本编辑器。"
       },
       {
         "name": "Laser Egg App",
-        "desc": "一个由 React Native + HomeKit 实现的 App 项目。由我从 0 - 1开发完成。该 App 用来与一个智能家居 Laser Egg 进行交互，涉及到调整该设备的亮度，温度显示设置等。"
+        "desc": "一个由 React Native + HomeKit 实现的 App 项目。由我从 0 - 1 开发完成。该 App 用来与一个智能家居 Laser Egg 进行交互，涉及到调整该设备的屏幕亮度，天气显示设置等。"
       }
     ],
     "techStack": ["Angular 2", "React Native", "Node.js", "Koa", "MongoDB"]
@@ -50,18 +56,18 @@
     "duration": "2016-01 ~ 2016-09",
     "position": "高级全栈工程师",
     "desc": [
-      "使用 Angular 负责后台系统的前端开发，涉及大量图表charts的样式",
+      "使用 Angular 负责后台系统的前端开发，涉及大量图表 charts 样式",
       "使用 Node.js + Express 负责后端的 RESTful API 开发",
       "重构了大量可重用的 Angular UI 组件"
     ],
     "projects": [
       {
         "name": "Dashboard 平台",
-        "desc": "使用 Angular 1 开发的单页面应用。根据不同的数据展示需求，实现了利用 Charts 来展示不同纬度的数据，例如 PV, DAU 等。"
+        "desc": "使用 Angular 1 开发的单页面应用。根据不同的数据展示需求，实现了利用 Charts 来展示不同维度的数据，例如 PV, DAU 等。"
       },
       {
         "name": "API 服务器",
-        "desc": "设计并且开发 RESTful API 接口，根据不同业务需求，使用 Node.js + Express + MongoDB。同时使用 MQTT 为前端推送消息。"
+        "desc": "根据不同业务需求，设计并且开发 RESTful API 接口，使用 Node.js + Express + MongoDB。同时使用 MQTT 为客户端推送消息。"
       }
     ],
     "techStack": ["Angular", "Node.js", "Express", "Redis", "MongoDB"]
@@ -71,18 +77,18 @@
     "duration": "2014-09 ~ 2016-01",
     "position": "前端工程师",
     "desc": [
-      "使用 Knockout.js + Bootstrap 完成平台页面的前端样式与业务逻辑",
+      "使用 Knockout.js + Bootstrap 完成页面的前端样式与业务逻辑",
       "负责推广邮件的设计以及代码实现",
       "实现并维护系统内部可重用的UI组件库"
     ],
     "projects": [
       {
         "name": "用户社交平台",
-        "desc": "一个 Web 应用，使用了 Knockout.js + Angular 1 混合开发。与设计师紧密配合，按照一定规范，实现了一套可重用的组件。"
+        "desc": "Web 应用，涉及用户社交功能，使用了 Knockout.js + Angular 1 混合开发。与外籍设计师紧密配合，实现了一套可重用的组件。"
       },
       {
         "name": "推广邮件模版",
-        "desc": "设计并且用 HTML 代码实现了多套邮件模版，根据不同的用户画像定期发送不同的推广邮件给用户。"
+        "desc": "定期设计并且用 HTML 实现了多套邮件模版，根据不同的用户画像定期发送推广邮件到用户。"
       }
     ],
     "techStack": ["Knockout.js", "Angular", "Bootstrap", "Node.js", "Docker"]
@@ -100,11 +106,11 @@
     "projects": [
       {
         "name": "SSOE",
-        "desc": "新加坡教育部的项目，由 JSP 构建，涉及不同用户的用户权限管理。修复了一些项目中潜在的错误，同时解决了若干个无人能解决的性能问题。"
+        "desc": "新加坡教育部的 JSP 项目，涉及大量的用户权限管理以及动态表单。修复了一些项目中潜在的错误，解决了若干个无人能解决的问题。"
       },
       {
         "name": "报表生成器",
-        "desc": "一个由 Java 编写的程序，根据不同的数据源，不同的数据展示需求，去生成不同格式(.excel, .pdf)的文件。系统会定期执行脚本，生成报表，定期发送给客户指定邮箱。"
+        "desc": "一个由 Java 编写的程序，根据不同的数据源以及展示需求，生成不同格式(.excel, .pdf)的文件。系统会定期执行该程序，生成报表，定期发送到用户的邮箱。"
       }
     ]
   }
