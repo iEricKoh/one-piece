@@ -35,7 +35,7 @@ export default function LanguageChanger() {
 
   return (
     <a
-      className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-orange-400 transition-all text-2xl"
+      className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-teal-400 transition-all text-2xl"
       onClick={handleChange}
     >
       <IoLanguageOutline />

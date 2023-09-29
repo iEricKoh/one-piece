@@ -22,7 +22,7 @@ export const Navbar = () => {
                 key={index}
                 href={link.url}
                 target="_blank"
-                className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-orange-400 transition-all text-2xl"
+                className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-teal-400 transition-all text-2xl"
               >
                 {link.icon}
               </a>

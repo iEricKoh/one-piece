@@ -20,7 +20,7 @@ export const Bar = ({ label, width }: { width: number; label: string }) => {
       <animated.div style={labelStyle} className="mb-2">
         {label}
       </animated.div>
-      <animated.div className="bg-orange-400 h-5" style={style}></animated.div>
+      <animated.div className="bg-teal-400 h-5" style={style}></animated.div>
     </div>
   )
 }
