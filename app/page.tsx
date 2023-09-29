@@ -6,6 +6,7 @@ import { FaGithub } from "react-icons/fa"
 import { SectionHeader } from "@/components/SectionHeader"
 import { Intro } from "@/components/Intro"
 import getIntl from "@/lib/intl"
+import Image from "next/image"
 
 export default async function Home() {
   const intl = await getIntl("cv")
@@ -17,7 +18,9 @@ export default async function Home() {
         <Experiences experiences={experiences} />
 
         <SectionHeader
-          icon={<FaGithub />}
+          icon={
+            <Image src="/terminal.svg" width={35} height={35} alt="skills" />
+          }
           heading={intl.formatMessage({ id: "skills" })}
         />
         <div className="grid gap-8 md:grid-cols-3 md:gap-14 md:mt-10 min-w-full">

@@ -24,7 +24,7 @@ export const Experiences = async ({
           <Fragment key={e.company}>
             <div className="col-span-3 grid grid-cols-2 md:col-span-1 items-center w-full md:block">
               <div className="">
-                <div className="text-2xl md:text-4xl mb-1 md:mb-2">
+                <div className="text-2xl md:text-3xl mb-1 md:mb-2">
                   {e.company}
                 </div>
               </div>
@@ -33,7 +33,7 @@ export const Experiences = async ({
               </time>
             </div>
             <div className="col-span-3 md:col-span-2 mb-12 md:mb-0">
-              <div className="text-lg md:text-3xl mb-5">
+              <div className="text-lg md:text-2xl mb-5">
                 <AnimatedLabel value={e.position} />
               </div>
               <div className="row-span-2 col-span-2">
