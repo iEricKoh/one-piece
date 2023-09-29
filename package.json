@@ -13,6 +13,7 @@
     "@formatjs/intl": "^2.9.3",
     "@formatjs/intl-localematcher": "^0.4.2",
     "@react-spring/web": "^9.7.3",
+    "@vercel/analytics": "^1.0.2",
     "negotiator": "^0.6.3",
     "next": "latest",
     "next-i18n-router": "^4.0.0",
