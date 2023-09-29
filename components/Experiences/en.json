@@ -8,7 +8,21 @@
       "Responsible for code quality and identifying improvements to workflow and operations.",
       "Overseeing project completion."
     ],
-    "techStack": ["React", "Redux", "Flutter", "Node.js", "AWS"]
+    "techStack": ["React", "Redux", "Flutter", "Node.js", "AWS"],
+    "projects": [
+      {
+        "name": "Web",
+        "desc": "Independently crafted a React-based SPA from the ground up, seamlessly integrating Redux Observable and Bootstrap to elevate both the user interface and overall performance."
+      },
+      {
+        "name": "App",
+        "desc": "Solely engineered a cross-platform mobile application using Flutter and Riverpod, ensuring a flawless user experience and functionality across different platforms."
+      },
+      {
+        "name": "Chrome Extension",
+        "desc": "Single-handedly designed and developed a Chrome extension using VanillaJS and Vite, streamlining daily tasks and optimizing operational efficiency."
+      }
+    ]
   },
   {
     "company": "DC Asia",
@@ -19,7 +33,17 @@
       "Developed & delivered the HTML, CSS & JS architecture.",
       "Worked closely with clients from conception to completion."
     ],
-    "techStack": ["Angular 2", "React Native", "Node.js", "Koa", "MongoDB"]
+    "techStack": ["Angular 2", "React Native", "Node.js", "Koa", "MongoDB"],
+    "projects": [
+      {
+        "name": "Website Builder",
+        "desc": "Conceived and developed a website builder with Angular 2, closely resembling the functionality of weex.com, while also integrating a sophisticated rich text editor seamlessly into the platform."
+      },
+      {
+        "name": "React Native App",
+        "desc": "Single-handedly crafted a React Native mobile application for efficiently managing hardware settings, such as screen brightness and weather settings, for the Laser Egg device."
+      }
+    ]
   },
   {
     "company": "Video++",
@@ -30,7 +54,17 @@
       "Responsible for the RESTful API development.",
       "Implemented all the UI into resuable Angular components."
     ],
-    "techStack": ["Angular", "Node.js", "Express", "Redis", "MongoDB"]
+    "techStack": ["Angular", "Node.js", "Express", "Redis", "MongoDB"],
+    "projects": [
+      {
+        "name": "Web Dashboard",
+        "desc": "Created a dashboard web application with Angular to display statistics data primarily through charts."
+      },
+      {
+        "name": "RESTful API Server",
+        "desc": "Designed and built a RESTful API server using Node.js for efficient data handling and API management."
+      }
+    ]
   },
   {
     "company": "Tradesparq",
@@ -41,7 +75,17 @@
       "Produced weekly newsletters & managed email campaigns.",
       "Developed a strong knowledge of accessibility & usability."
     ],
-    "techStack": ["Knockout.js", "Angular", "Bootstrap", "Node.js", "Docker"]
+    "techStack": ["Knockout.js", "Angular", "Bootstrap", "Node.js", "Docker"],
+    "projects": [
+      {
+        "name": "Web Platform",
+        "desc": "Focused on implementing reusable components throughout the Tradesparq site to enhance functionality and maintainability."
+      },
+      {
+        "name": "Email Template",
+        "desc": "Designed and created various email templates targeting different user segments to expand the market reach."
+      }
+    ]
   },
   {
     "company": "NCS",
@@ -52,6 +96,16 @@
       "Developed semantic HTML, CSS, and JS for several projects.",
       "Improved project performance."
     ],
-    "techStack": ["Java", "Spring", "Structs", "iBATIS", "SQL Server", "JBoss"]
+    "techStack": ["Java", "Spring", "Structs", "iBATIS", "SQL Server", "JBoss"],
+    "projects": [
+      {
+        "name": "SSOE Performance Enhancements",
+        "desc": "Focused on enhancing the performance of a JSP application built with Structs and Java, solving complex issues and implementing improvements."
+      },
+      {
+        "name": "Billing Report Generator",
+        "desc": "Developed an automated system in Java for generating monthly and yearly billing reports."
+      }
+    ]
   }
 ]

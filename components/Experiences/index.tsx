@@ -6,6 +6,7 @@ import { SectionHeader } from "../SectionHeader"
 import { Experience } from "@/interfaces/experience"
 import { currentLocale } from "next-i18n-router"
 import getIntl from "@/lib/intl"
+import Projects from "../Projects"
 
 export const Experiences = async () => {
   const intl = await getIntl("cv")
@@ -45,6 +46,7 @@ export const Experiences = async () => {
                     </li>
                   ))}
                 </ul>
+                {e.projects.length > 0 && <Projects projects={e.projects} />}
                 <div className="italic text-sm mt-5">
                   <TechStack stack={e.techStack.join(" / ")} />
                 </div>
