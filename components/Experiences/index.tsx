@@ -9,7 +9,7 @@ import getIntl from "@/lib/intl"
 import Projects from "../Projects"
 
 export const Experiences = async () => {
-  const intl = await getIntl("cv")
+  const intl = await getIntl()
 
   const locale = currentLocale()
 

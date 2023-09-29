@@ -2,7 +2,7 @@ import getIntl from "@/lib/intl"
 import { MdEmail, MdLocationOn, MdPhoneIphone } from "react-icons/md"
 import { Title } from "./Title"
 export const Info = async () => {
-  const intl = await getIntl("cv")
+  const intl = await getIntl()
 
   return (
     <div className="flex flex-col md:flex-row justify-between mb-16">
