@@ -7,12 +7,13 @@ import { Experience } from "@/interfaces/experience"
 import { currentLocale } from "next-i18n-router"
 import getIntl from "@/lib/intl"
 
-export const Experiences = async ({
-  experiences,
-}: {
-  experiences: Array<Experience>
-}) => {
+export const Experiences = async () => {
   const intl = await getIntl("cv")
+
+  const locale = currentLocale()
+
+  const experiences = await import(`./${locale}.json`)
+
   return (
     <>
       <SectionHeader
@@ -20,7 +21,7 @@ export const Experiences = async ({
         heading={intl.formatMessage({ id: "experience" })}
       />
       <div className="grid md:grid-cols-3 md:gap-14">
-        {experiences.map((e) => (
+        {Array.from(experiences).map((e) => (
           <Fragment key={e.company}>
             <div className="col-span-3 grid grid-cols-2 md:col-span-1 items-center w-full md:block">
               <div className="">

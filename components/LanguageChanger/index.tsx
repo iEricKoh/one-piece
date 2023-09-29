@@ -4,15 +4,15 @@ import { useRouter } from "next/navigation"
 import { usePathname } from "next/navigation"
 import { useCurrentLocale } from "next-i18n-router/client"
 import i18nConfig from "@/i18nConfig"
-import { ChangeEvent } from "react"
+import { IoLanguageOutline } from "react-icons/io5"
 
 export default function LanguageChanger() {
   const router = useRouter()
   const currentPathname = usePathname()
   const currentLocale = useCurrentLocale(i18nConfig)
 
-  const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    const newLocale = e.target.value
+  const handleChange = () => {
+    const newLocale = currentLocale === "zh" ? "en" : "zh"
 
     // set cookie for next-i18n-router
     const days = 30
@@ -34,9 +34,11 @@ export default function LanguageChanger() {
   }
 
   return (
-    <select onChange={handleChange} value={currentLocale}>
-      <option value="en">English</option>
-      <option value="zh">Chinese</option>
-    </select>
+    <a
+      className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-orange-400 transition-all text-2xl"
+      onClick={handleChange}
+    >
+      <IoLanguageOutline />
+    </a>
   )
 }

@@ -20,6 +20,7 @@ export const Title = () => {
 
   return (
     <TypeAnimation
+      key={locale}
       cursor={true}
       sequence={sequence}
       wrapper="div"

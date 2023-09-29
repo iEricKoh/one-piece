@@ -4,6 +4,9 @@ import { Inter } from "next/font/google"
 import { ThemeProvider } from "./theme-provider"
 import { Navbar } from "@/components/Navbar"
 import { Analytics } from "@vercel/analytics/react"
+import { IntlProvider } from "react-intl"
+import getIntl from "@/lib/intl"
+import ServerIntlProvider from "./ServerIntlProvider"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -23,17 +26,20 @@ export const metadata: Metadata = {
   publisher: "Eric Koh",
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const intl = await getIntl("cv")
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.className}  bg-white dark:bg-slate-900`}>
         <ThemeProvider attribute="class">
-          <Navbar />
-          {children}
+          <ServerIntlProvider locale={intl.locale} messages={intl.messages}>
+            <Navbar />
+            {children}
+          </ServerIntlProvider>
         </ThemeProvider>
         <Analytics />
       </body>
