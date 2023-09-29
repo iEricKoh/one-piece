@@ -1,10 +1,11 @@
 "use client"
+
 import { useState, useEffect } from "react"
 import { useTheme } from "next-themes"
 
 export const ThemeSwitcher = () => {
   const [mounted, setMounted] = useState(false)
-  const { theme, setTheme } = useTheme()
+  const { resolvedTheme, setTheme } = useTheme()
 
   useEffect(() => {
     setMounted(true)
@@ -17,9 +18,9 @@ export const ThemeSwitcher = () => {
   return (
     <button
       className="p-2 rounded-full hover:bg-gray-200 transition-all dark:hover:bg-orange-400"
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
     >
-      {theme === "light" ? (
+      {resolvedTheme === "light" ? (
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-6 w-6"
