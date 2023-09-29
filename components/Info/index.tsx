@@ -16,7 +16,7 @@ export const Info = async () => {
       </hgroup>
       <address className="mt-5 md:mt-0 md:text-lg text-right md:text-left">
         <a
-          className="flex items-center"
+          className="mb-2 flex items-center"
           href="mailto:akaerickoh@gmail.com?subject=What's up"
         >
           <div className="mr-2 md:mr-3">
@@ -24,7 +24,7 @@ export const Info = async () => {
           </div>
           <span>akaerickoh@gmail.com</span>
         </a>
-        <a className="flex items-center" href="tel:+8616628560990">
+        <a className="mb-2 flex items-center" href="tel:+8616628560990">
           <div className="mr-2 md:mr-3">
             <MdPhoneIphone />
           </div>
