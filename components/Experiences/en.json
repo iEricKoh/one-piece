@@ -4,9 +4,10 @@
     "duration": "Jul 2017 - May 2023",
     "position": "Senior Front End Developer",
     "desc": [
+      "Responsible for architecting multiple projects from the ground up, seeing them through from inception to successful deployment.",
       "Leading, mentoring and providing technical guidance to a team of passionate front-end developers.",
-      "Responsible for code quality and identifying improvements to workflow and operations.",
-      "Overseeing project completion."
+      "Actively engaged in the design and discussion of critical features, making significant contributions to the product's evolution.",
+      "Responsible for code quality and identifying improvements to workflow and operations."
     ],
     "techStack": ["React", "Redux", "Flutter", "Node.js", "AWS"],
     "projects": [
