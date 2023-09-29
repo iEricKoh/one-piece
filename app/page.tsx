@@ -1,6 +1,5 @@
 import Graph from "@/components/Graph"
 import { Experiences } from "@/components/Experiences"
-import experiences from "./data.json"
 import { Info } from "@/components/Info"
 import { FaGithub } from "react-icons/fa"
 import { SectionHeader } from "@/components/SectionHeader"
@@ -15,11 +14,11 @@ export default async function Home() {
     <main className="app min-h-screen px-4 md:px-10">
       <div className="max-w-screen-xl m-auto pb-10 md:py-20">
         <Info />
-        <Experiences experiences={experiences} />
+        <Experiences />
 
         <SectionHeader
           icon={
-            <Image src="/terminal.svg" width={35} height={35} alt="skills" />
+            <Image src="/terminal.svg" width={30} height={30} alt="skills" />
           }
           heading={intl.formatMessage({ id: "skills" })}
         />

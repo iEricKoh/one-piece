@@ -1,5 +1,7 @@
 import { ThemeSwitcher } from "@/components/ThemeSwitcher"
 import { FaGithub, FaLinkedinIn } from "react-icons/fa"
+import { IoLanguageOutline } from "react-icons/io5"
+import LanguageChanger from "../LanguageChanger"
 
 const links = [
   { icon: <FaLinkedinIn />, url: "https://www.linkedin.com/in/ierickoh" },
@@ -32,6 +34,7 @@ export const Navbar = () => {
             {/*   Sign Up */}
             {/* </a> */}
             <ThemeSwitcher />
+            <LanguageChanger />
           </div>
         </div>
       </nav>
