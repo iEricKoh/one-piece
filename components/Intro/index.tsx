@@ -1,20 +1,18 @@
 "use client"
 
-import i18nConfig from "@/i18nConfig"
-import { useCurrentLocale } from "next-i18n-router/client"
 import { TypeAnimation } from "react-type-animation"
 
 export const Intro = () => {
-  // const locale = useCurrentLocale(i18nConfig)
-
   return (
     <TypeAnimation
       cursor={false}
       sequence={[
         `I am a highly driven and passionate web developer with over 10 years of successful development of interactive web and mobile applications.\n
-Proven record of escalating customer satisfaction and increasing user interaction through timely implementation of cutting-edge designs, cutting development time, and integration of third-party services.`,
+As a self-motivated web developer, I am always interested in trying new things. I really love diving into new problems and solving them. I believe that the key to progress is trying new think.\n
+Programming allows me to constantly explore new things and challenge myself.
+`,
       ]}
-      speed={85}
+      speed={83}
       style={{ whiteSpace: "pre-line" }}
       repeat={0}
     />
