@@ -18,7 +18,13 @@ export default async function Home() {
 
         <SectionHeader
           icon={
-            <Image src="/terminal.svg" width={30} height={30} alt="skills" />
+            <Image
+              src="/terminal.svg"
+              width={25}
+              height={25}
+              alt="skills"
+              className="dark:invert"
+            />
           }
           heading={intl.formatMessage({ id: "skills" })}
         />
