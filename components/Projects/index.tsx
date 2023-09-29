@@ -39,7 +39,7 @@ export const Projects = ({
           {projects.map((proj, index) => (
             <dl key={index} className="py-2">
               <dt className="inline">
-                * <em>{proj.name}</em>:{" "}
+                * <em>{proj.name}:</em>{" "}
               </dt>
               <dd className="inline">{proj.desc}</dd>
             </dl>
