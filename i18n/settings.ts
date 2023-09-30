@@ -4,7 +4,6 @@ export const fallbackLng = "en"
 export const locales = [fallbackLng, "zh-CN"] as const
 export type LocaleTypes = (typeof locales)[number]
 export const defaultNS = "common"
-export const cookieName = "i18next"
 export const headerName = "x-next-locale"
 
 export function getOptions(lang = fallbackLng, ns = defaultNS): InitOptions {

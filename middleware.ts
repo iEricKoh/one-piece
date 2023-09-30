@@ -1,11 +1,5 @@
 import { NextResponse, NextRequest } from "next/server"
-import {
-  LocaleTypes,
-  cookieName,
-  fallbackLng,
-  headerName,
-  locales,
-} from "./i18n/settings"
+import { LocaleTypes, fallbackLng, headerName, locales } from "./i18n/settings"
 import { match as matchLocale } from "@formatjs/intl-localematcher"
 import Negotiator from "negotiator"
 
@@ -56,18 +50,7 @@ export function middleware(request: NextRequest) {
   // console.log(locales, pathname, pathnameIsMissingLocale)
 
   if (pathnameIsMissingLocale) {
-    let locale
-
-    const cookieValue = request.cookies.get(cookieName)?.value
-
-    if (cookieValue && locales.includes(cookieValue as LocaleTypes)) {
-      locale = cookieValue
-    }
-
-    if (!locale) {
-      // We are on the default locale
-      locale = getLocale(request)
-    }
+    const locale = getLocale(request)
 
     // Rewrite so Next.js understands
     // e.g. incoming request is /about
