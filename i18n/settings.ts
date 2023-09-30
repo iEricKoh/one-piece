@@ -15,7 +15,7 @@ export function getOptions(lang = fallbackLng, ns = defaultNS): InitOptions {
     fallbackNS: defaultNS,
     defaultNS,
     ns,
-    debug: true,
+    // debug: true,
     load: "currentOnly",
   }
 }
