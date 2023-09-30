@@ -10,7 +10,13 @@ import {
 import { useCookies } from "react-cookie"
 import resourcesToBackend from "i18next-resources-to-backend"
 import LanguageDetector from "i18next-browser-languagedetector"
-import { type LocaleTypes, getOptions, locales, cookieName } from "./settings"
+import {
+  type LocaleTypes,
+  getOptions,
+  locales,
+  cookieName,
+  backendResources,
+} from "./settings"
 import { useParams } from "next/navigation"
 
 const runsOnServerSide = typeof window === "undefined"
@@ -19,17 +25,13 @@ const runsOnServerSide = typeof window === "undefined"
 i18next
   .use(initReactI18next)
   .use(LanguageDetector)
-  .use(
-    resourcesToBackend(
-      (language: string, namespace: string) =>
-        import(`./locales/${language}/${namespace}.json`),
-    ),
-  )
+  .use(resourcesToBackend(backendResources))
   .init({
     ...getOptions(),
     lng: undefined, // let detect the language on client side
     detection: {
       order: ["path", "htmlTag", "cookie", "navigator"],
+      lookupCookie: cookieName,
       // order: ["path", "htmlTag"],
     },
     preload: runsOnServerSide ? locales : [],
