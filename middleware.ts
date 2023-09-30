@@ -50,15 +50,15 @@ export function middleware(request: NextRequest) {
   // console.log(locales, pathname, pathnameIsMissingLocale)
 
   if (pathnameIsMissingLocale) {
-    const locale = getLocale(request)
+    // const locale = getLocale(request)
 
     // Rewrite so Next.js understands
     // e.g. incoming request is /about
     // Tell Next.js it should pretend it's /en/about
     const response = NextResponse.rewrite(
-      new URL(`/${locale}${pathname}`, request.url),
+      new URL(`/${fallbackLng}${pathname}`, request.url),
     )
-    response.headers.set(headerName, locale)
+    response.headers.set(headerName, fallbackLng)
 
     return response
   } else {
@@ -75,5 +75,6 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: "/((?!api|static|.*\\..*|_next).*)",
+  // matcher: "/((?!api|static|.*\\..*|_next).*)",
+  matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
 }
