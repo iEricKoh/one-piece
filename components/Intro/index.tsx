@@ -1,15 +1,15 @@
 "use client"
 
-import { useIntl } from "react-intl"
+import { useTranslation } from "@/i18n/client"
 import { TypeAnimation } from "react-type-animation"
 
 export const Intro = () => {
-  const intl = useIntl()
+  const { t } = useTranslation("cv")
+
   return (
     <TypeAnimation
-      key={intl.locale}
       cursor={false}
-      sequence={[intl.formatMessage({ id: "intro" })]}
+      sequence={[t("intro")]}
       speed={83}
       style={{ whiteSpace: "pre-line" }}
       repeat={0}

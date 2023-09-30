@@ -1,34 +1,28 @@
 "use client"
 
-import { useRouter } from "next/navigation"
-import { usePathname } from "next/navigation"
-import { useCurrentLocale } from "next-i18n-router/client"
-import i18nConfig from "@/i18nConfig"
+import i18next from "i18next"
+import {
+  useSelectedLayoutSegments,
+  useParams,
+  useRouter,
+} from "next/navigation"
 import { IoLanguageOutline } from "react-icons/io5"
 
 export default function LanguageChanger() {
+  const locale = useParams()?.locale
   const router = useRouter()
-  const currentPathname = usePathname()
-  const currentLocale = useCurrentLocale(i18nConfig)
+  const urlSegments = useSelectedLayoutSegments()
 
   const handleChange = () => {
-    const newLocale = currentLocale === "zh" ? "en" : "zh"
+    const newLocale = locale === "zh-CN" ? "en" : "zh-CN"
 
-    // set cookie for next-i18n-router
-    const days = 30
-    const date = new Date()
-    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000)
-    const expires = "; expires=" + date.toUTCString()
-    document.cookie = `NEXT_LOCALE=${newLocale};expires=${expires};path=/`
+    i18next.changeLanguage(newLocale, (err) => {
+      if (err) {
+        return console.log("something went wrong loading", err)
+      }
+    })
 
-    if (
-      currentLocale === i18nConfig.defaultLocale &&
-      !i18nConfig.prefixDefault
-    ) {
-      router.push("/" + newLocale + currentPathname)
-    } else {
-      router.push(currentPathname.replace(`/${currentLocale}`, `/${newLocale}`))
-    }
+    router.push(`/${newLocale}/${urlSegments.slice(1).join("/")}`)
 
     router.refresh()
   }

@@ -2,9 +2,9 @@
 
 import { animated, useSpring } from "@react-spring/web"
 import { useState } from "react"
-import { FormattedMessage } from "react-intl"
 import useMeasure from "react-use-measure"
 import { BsChevronRight, BsChevronDown } from "react-icons/bs"
+import { useTranslation } from "@/i18n/client"
 
 export const Projects = ({
   projects,
@@ -15,6 +15,8 @@ export const Projects = ({
 
   const [ref, { height }] = useMeasure()
   const styles = useSpring({ height: open ? height : 0 })
+
+  const { t } = useTranslation("cv")
 
   return (
     <div>
@@ -29,7 +31,7 @@ export const Projects = ({
           ) : (
             <BsChevronRight className="inline relative mr-1" />
           )}
-          <FormattedMessage id="projects" />
+          {t("projects")}
         </span>
       </a>
       <animated.div className="overflow-hidden" style={styles}>
