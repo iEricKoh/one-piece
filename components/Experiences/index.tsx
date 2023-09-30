@@ -4,23 +4,20 @@ import TechStack from "../TechStack"
 import { AnimatedLabel } from "../AnimatedLabel"
 import { SectionHeader } from "../SectionHeader"
 import { Experience } from "@/interfaces/experience"
-import { currentLocale } from "next-i18n-router"
-import getIntl from "@/lib/intl"
 import Projects from "../Projects"
+import currentLocale from "@/i18n/current-locale"
+import { useTranslation } from "@/i18n/server"
 
 export const Experiences = async () => {
-  const intl = await getIntl()
-
   const locale = currentLocale()
 
   const experiences: Array<Experience> = await import(`./${locale}.json`)
 
+  const { t } = await useTranslation("cv")
+
   return (
     <>
-      <SectionHeader
-        icon={<FaCodepen />}
-        heading={intl.formatMessage({ id: "experience" })}
-      />
+      <SectionHeader icon={<FaCodepen />} heading={t("experience")} />
       <div className="grid md:grid-cols-3 md:gap-14">
         {Array.from(experiences).map((e) => (
           <Fragment key={e.company}>

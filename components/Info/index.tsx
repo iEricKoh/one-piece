@@ -1,14 +1,14 @@
-import getIntl from "@/lib/intl"
 import { MdEmail, MdLocationOn, MdPhoneIphone } from "react-icons/md"
 import { Title } from "./Title"
-export const Info = async () => {
-  const intl = await getIntl()
+import { useTranslation } from "@/i18n/server"
 
+export const Info = async () => {
+  const { t } = await useTranslation("cv")
   return (
     <div className="flex flex-col md:flex-row justify-between mb-16">
       <hgroup>
         <h1 className="text-5xl md:text-8xl font-bold uppercase">
-          {intl.formatMessage({ id: "fullname" })}
+          {t("fullname")}
         </h1>
         <h4 className="md:text-2xl md:text-center mt-2">
           <Title />
@@ -34,7 +34,7 @@ export const Info = async () => {
           <div className="mr-2 md:mr-3">
             <MdLocationOn />
           </div>
-          <span>{intl.formatMessage({ id: "address" })}</span>
+          <span>{t("address")}</span>
         </div>
       </address>
     </div>

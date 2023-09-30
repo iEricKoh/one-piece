@@ -1,18 +1,11 @@
-import "./globals.css"
+import "../globals.css"
 import type { Metadata } from "next"
-import { dir } from "i18next"
 import { Inter } from "next/font/google"
-import { ThemeProvider } from "./theme-provider"
+import { ThemeProvider } from "../theme-provider"
 import { Navbar } from "@/components/Navbar"
 import { Analytics } from "@vercel/analytics/react"
-import currentLocale from "@/i18n/current-locale"
-import { locales } from "@/i18n/settings"
 
 const inter = Inter({ subsets: ["latin"] })
-
-export async function generateStaticParams() {
-  return locales.map((lng) => ({ lng }))
-}
 
 export const metadata: Metadata = {
   title: "Eric Koh - Senior Front End / Full Stack Developer",
@@ -36,11 +29,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html
-      lang={currentLocale()}
-      dir={dir(currentLocale())}
-      suppressHydrationWarning
-    >
+    <html lang={'en'}>
       <body className={`${inter.className}  bg-white dark:bg-slate-900`}>
         <ThemeProvider attribute="class">
           <Navbar />

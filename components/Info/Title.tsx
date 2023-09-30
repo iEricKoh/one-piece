@@ -1,13 +1,13 @@
 "use client"
 
-import i18nConfig from "@/i18nConfig"
-import { useCurrentLocale } from "next-i18n-router/client"
+import { useParams } from "next/navigation"
 import { TypeAnimation } from "react-type-animation"
+
 export const Title = () => {
-  const locale = useCurrentLocale(i18nConfig)
+  const locale = useParams()?.locale
 
   const sequence =
-    locale === "zh"
+    locale === "zh-CN"
       ? ["高级前端", 1000, "高级全栈", 1000, "高级前端/全栈工程师", 1000]
       : [
           "Senior Front End",
@@ -20,7 +20,6 @@ export const Title = () => {
 
   return (
     <TypeAnimation
-      key={locale}
       cursor={true}
       sequence={sequence}
       wrapper="div"
