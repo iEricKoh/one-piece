@@ -5,6 +5,7 @@ import { Info } from "@/components/Info"
 import { Intro } from "@/components/Intro"
 import { SectionHeader } from "@/components/SectionHeader"
 import { useTranslation } from "@/i18n/server"
+import terminal from "@/public/terminal.svg"
 
 const IndexPage = async () => {
   const { t } = await useTranslation("cv")
@@ -17,11 +18,12 @@ const IndexPage = async () => {
         <SectionHeader
           icon={
             <Image
-              src="/terminal.svg"
+              src={terminal}
               width={25}
               height={25}
               alt="skills"
               className="dark:invert"
+              priority
             />
           }
           heading={t("skills")}
