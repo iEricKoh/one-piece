@@ -1,12 +1,13 @@
-import "../globals.css"
+import "./globals.css"
 import type { Metadata } from "next"
 import { dir } from "i18next"
 import { Inter } from "next/font/google"
-import { ThemeProvider } from "../theme-provider"
+import { ThemeProvider } from "./theme-provider"
 import { Navbar } from "@/components/Navbar"
 import { Analytics } from "@vercel/analytics/react"
 import { locales } from "@/i18n/settings"
-import { PageWithLocale } from "./type"
+import { PropsWithChildren } from "react"
+import currentLocale from "@/i18n/current-locale"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -32,10 +33,8 @@ export const metadata: Metadata = {
   publisher: "Eric Koh",
 }
 
-export default function RootLayout({
-  children,
-  params: { locale },
-}: PageWithLocale) {
+export default function RootLayout({ children }: PropsWithChildren) {
+  const locale = currentLocale()
   return (
     <html lang={locale} dir={dir(locale)} suppressHydrationWarning>
       <body className={`${inter.className}  bg-white dark:bg-slate-900`}>

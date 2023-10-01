@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import i18next, { i18n } from "i18next"
+import i18next, { dir, i18n } from "i18next"
 import {
   initReactI18next,
   useTranslation as useTranslationOrg,
@@ -58,6 +58,10 @@ function useCustomTranslationImplem(i18n: i18n, lng: LocaleTypes) {
   // This effect updates the active language state variable when the resolved language changes,
   useEffect(() => {
     if (activeLng === i18n.resolvedLanguage) return
+
+    if (i18n.resolvedLanguage) {
+      document.documentElement.lang = i18n.resolvedLanguage
+    }
     setActiveLng(i18n.resolvedLanguage)
   }, [activeLng, i18n.resolvedLanguage])
 
