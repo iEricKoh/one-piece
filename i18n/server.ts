@@ -7,18 +7,16 @@ import { backendResources, getOptions, LocaleTypes } from "./settings"
 import { headers } from "next/headers"
 import currentLocale from "./current-locale"
 
-// Initialize the i18n instance
-const initI18next = async (lang: LocaleTypes, ns: string) => {
+const initI18next = async (lng: LocaleTypes, ns: string) => {
   const i18nInstance = createInstance()
   await i18nInstance
     .use(initReactI18next)
     .use(resourcesToBackend(backendResources))
-    .init(getOptions(lang, ns))
+    .init(getOptions(lng, ns))
 
   return i18nInstance
 }
 
-// It will accept the locale and namespace for i18next to know what file to load
 export async function useTranslation(ns: string) {
   const locale = currentLocale()
   const i18nextInstance = await initI18next(locale, ns)

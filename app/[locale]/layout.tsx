@@ -1,15 +1,23 @@
 import "../globals.css"
 import type { Metadata } from "next"
+import { dir } from "i18next"
 import { Inter } from "next/font/google"
 import { ThemeProvider } from "../theme-provider"
 import { Navbar } from "@/components/Navbar"
 import { Analytics } from "@vercel/analytics/react"
+import { locales } from "@/i18n/settings"
+import { PageWithLocale } from "./type"
 
 const inter = Inter({ subsets: ["latin"] })
+
+export async function generateStaticParams() {
+  return locales.map((locale) => ({ locale }))
+}
 
 export const metadata: Metadata = {
   title: "Eric Koh - Senior Front End / Full Stack Developer",
   description: "Eric Koh - Senior Front End / Full Stack Developer",
+  generator: "Next.js",
   keywords: [
     "Eric Koh",
     "Senior Front End Developer",
@@ -19,17 +27,17 @@ export const metadata: Metadata = {
     "TypeScript",
   ],
   authors: [{ name: "Eric Koh", url: "https://www.ierickoh.com/" }],
+  applicationName: "Eric Koh",
   creator: "Eric Koh",
   publisher: "Eric Koh",
 }
 
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode
-}) {
+  params: { locale },
+}: PageWithLocale) {
   return (
-    <html lang={'en'}>
+    <html lang={locale} dir={dir(locale)} suppressHydrationWarning>
       <body className={`${inter.className}  bg-white dark:bg-slate-900`}>
         <ThemeProvider attribute="class">
           <Navbar />

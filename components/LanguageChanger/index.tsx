@@ -1,6 +1,5 @@
 "use client"
 
-import i18next from "i18next"
 import {
   useSelectedLayoutSegments,
   useParams,
@@ -14,18 +13,10 @@ export default function LanguageChanger() {
   const router = useRouter()
   const urlSegments = useSelectedLayoutSegments()
 
-  useEffect(() => {
-    if (locale !== i18next.resolvedLanguage) {
-      router.refresh()
-    }
-  }, [locale, router])
-
   const handleChange = () => {
     const newLocale = locale === "zh-CN" ? "en" : "zh-CN"
 
     router.push(`/${newLocale}/${urlSegments.slice(1).join("/")}`)
-
-    router.refresh()
   }
 
   return (

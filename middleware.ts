@@ -1,5 +1,11 @@
 import { NextResponse, NextRequest } from "next/server"
-import { LocaleTypes, fallbackLng, headerName, locales } from "./i18n/settings"
+import {
+  LocaleTypes,
+  cookieName,
+  fallbackLng,
+  headerName,
+  locales,
+} from "./i18n/settings"
 import { match as matchLocale } from "@formatjs/intl-localematcher"
 import Negotiator from "negotiator"
 
@@ -47,8 +53,6 @@ export function middleware(request: NextRequest) {
       !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`,
   )
 
-  // console.log(locales, pathname, pathnameIsMissingLocale)
-
   if (pathnameIsMissingLocale) {
     // const locale = getLocale(request)
 
@@ -58,6 +62,7 @@ export function middleware(request: NextRequest) {
     const response = NextResponse.rewrite(
       new URL(`/${fallbackLng}${pathname}`, request.url),
     )
+    response.cookies.set(cookieName, fallbackLng)
     response.headers.set(headerName, fallbackLng)
 
     return response
@@ -69,6 +74,7 @@ export function middleware(request: NextRequest) {
         pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
     )
 
+    response.cookies.set(cookieName, pathLocale!)
     response.headers.set(headerName, pathLocale!)
     return response
   }
