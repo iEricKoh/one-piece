@@ -20,5 +20,5 @@ export function getOptions(lang = fallbackLng, ns = defaultNS): InitOptions {
   }
 }
 
-export const backendResources = (language: string, namespace: string) =>
-  import(`./locales/${language}/${namespace}.json`)
+export const backendResources = (lng: string, ns: string) =>
+  import(`./locales/${lng}/${ns}.json`)

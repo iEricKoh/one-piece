@@ -7,7 +7,7 @@ import { backendResources, getOptions, LocaleTypes } from "./settings"
 import { headers } from "next/headers"
 import currentLocale from "./current-locale"
 
-const initI18next = async (lng: LocaleTypes, ns: string) => {
+const initI18next = async (lng: LocaleTypes, ns?: string) => {
   const i18nInstance = createInstance()
   await i18nInstance
     .use(initReactI18next)
@@ -17,7 +17,7 @@ const initI18next = async (lng: LocaleTypes, ns: string) => {
   return i18nInstance
 }
 
-export async function useTranslation(ns: string) {
+export async function useTranslation(ns?: string) {
   const locale = currentLocale()
   const i18nextInstance = await initI18next(locale, ns)
 

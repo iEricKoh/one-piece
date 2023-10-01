@@ -34,7 +34,7 @@ i18next
     preload: runsOnServerSide ? locales : [],
   })
 
-export function useTranslation(ns: string) {
+export function useTranslation(ns?: string) {
   const lng = useParams()?.locale as LocaleTypes
   const translator = useTranslationOrg(ns)
   const { i18n } = translator
