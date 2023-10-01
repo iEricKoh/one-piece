@@ -6,14 +6,17 @@ import { Intro } from "@/components/Intro"
 import { SectionHeader } from "@/components/SectionHeader"
 import { useTranslation } from "@/i18n/server"
 import terminal from "@/public/terminal.svg"
+import { Suspense } from "react"
 
 const IndexPage = async () => {
   const { t } = await useTranslation("cv")
   return (
     <main className="app min-h-screen px-4 md:px-10">
       <div className="max-w-screen-xl m-auto pb-10 md:py-20">
-        <Info />
-        <Experiences />
+        <Suspense>
+          <Info />
+          <Experiences />
+        </Suspense>
 
         <SectionHeader
           icon={
