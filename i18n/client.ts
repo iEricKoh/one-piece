@@ -13,8 +13,10 @@ import {
   getOptions,
   locales,
   backendResources,
+  cookieName,
 } from "./settings"
 import { useParams } from "next/navigation"
+import { useCookies } from "react-cookie"
 
 const runsOnServerSide = typeof window === "undefined"
 
@@ -27,14 +29,13 @@ i18next
     ...getOptions(),
     lng: undefined, // let detect the language on client side
     detection: {
-      order: ["path", "htmlTag", "navigator"],
+      order: ["path", "htmlTag", "cookie", "navigator"],
     },
     preload: runsOnServerSide ? locales : [],
   })
 
 export function useTranslation(ns: string) {
   const lng = useParams()?.locale as LocaleTypes
-  // const lng = (i18next.resolvedLanguage as LocaleTypes) ?? paramLocale
   const translator = useTranslationOrg(ns)
   const { i18n } = translator
 
@@ -46,10 +47,12 @@ export function useTranslation(ns: string) {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     useCustomTranslationImplem(i18n, lng)
   }
+
   return translator
 }
 
 function useCustomTranslationImplem(i18n: i18n, lng: LocaleTypes) {
+  const [cookies, setCookie] = useCookies([cookieName])
   const [activeLng, setActiveLng] = useState(i18n.resolvedLanguage)
 
   // This effect updates the active language state variable when the resolved language changes,
@@ -63,4 +66,9 @@ function useCustomTranslationImplem(i18n: i18n, lng: LocaleTypes) {
     if (!lng || i18n.resolvedLanguage === lng) return
     i18n.changeLanguage(lng)
   }, [lng, i18n])
+
+  useEffect(() => {
+    if (cookies.i18next === lng) return
+    setCookie(cookieName, lng, { path: "/" })
+  }, [lng, cookies.i18next, setCookie])
 }

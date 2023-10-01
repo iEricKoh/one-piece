@@ -21,6 +21,7 @@
     "next": "latest",
     "next-themes": "^0.2.1",
     "react": "latest",
+    "react-cookie": "^6.1.1",
     "react-dom": "latest",
     "react-i18next": "^13.2.2",
     "react-icons": "^4.11.0",
