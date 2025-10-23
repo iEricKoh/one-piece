@@ -1,9 +1,9 @@
-import { MdEmail, MdLocationOn, MdPhoneIphone } from "react-icons/md"
-import { Title } from "./Title"
-import { useTranslation } from "@/i18n/server"
+import { MdEmail, MdLocationOn, MdPhoneIphone } from "react-icons/md";
+import { Title } from "./Title";
+import { useTranslation } from "@/i18n/server";
 
 export const Info = async () => {
-  const { t } = await useTranslation("cv")
+  const { t } = await useTranslation("cv");
   return (
     <div className="flex flex-col md:flex-row justify-between mb-16">
       <hgroup>
@@ -24,11 +24,11 @@ export const Info = async () => {
           </div>
           <span>akaerickoh@gmail.com</span>
         </a>
-        <a className="mb-2 flex items-center" href="tel:+8616628560990">
+        <a className="mb-2 flex items-center" href="tel:+19366666010">
           <div className="mr-2 md:mr-3">
             <MdPhoneIphone />
           </div>
-          <span>+86 16628560990</span>
+          <span>+1 9366666010</span>
         </a>
         <div className="flex items-center">
           <div className="mr-2 md:mr-3">
@@ -38,5 +38,5 @@ export const Info = async () => {
         </div>
       </address>
     </div>
-  )
-}
+  );
+};
