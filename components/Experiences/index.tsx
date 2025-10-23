@@ -1,19 +1,19 @@
-import { Fragment } from "react"
-import { FaCodepen } from "react-icons/fa"
-import TechStack from "../TechStack"
-import { AnimatedLabel } from "../AnimatedLabel"
-import { SectionHeader } from "../SectionHeader"
-import { Experience } from "@/interfaces/experience"
-import Projects from "../Projects"
-import currentLocale from "@/i18n/current-locale"
-import { useTranslation } from "@/i18n/server"
+import { Fragment } from "react";
+import { FaCodepen } from "react-icons/fa";
+import TechStack from "../TechStack";
+import { AnimatedLabel } from "../AnimatedLabel";
+import { SectionHeader } from "../SectionHeader";
+import { Experience } from "@/interfaces/experience";
+import Projects from "../Projects";
+import currentLocale from "@/i18n/current-locale";
+import { getTranslation } from "@/i18n/server";
 
 export const Experiences = async () => {
-  const locale = currentLocale()
+  const locale = currentLocale();
 
-  const experiences: Array<Experience> = await import(`./${locale}.json`)
+  const experiences: Array<Experience> = await import(`./${locale}.json`);
 
-  const { t } = await useTranslation("cv")
+  const { t } = await getTranslation("cv");
 
   return (
     <>
@@ -53,5 +53,5 @@ export const Experiences = async () => {
         ))}
       </div>
     </>
-  )
-}
+  );
+};

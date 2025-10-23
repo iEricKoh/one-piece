@@ -1,9 +1,9 @@
 import { MdEmail, MdLocationOn, MdPhoneIphone } from "react-icons/md";
 import { Title } from "./Title";
-import { useTranslation } from "@/i18n/server";
+import { getTranslation } from "@/i18n/server";
 
 export const Info = async () => {
-  const { t } = await useTranslation("cv");
+  const { t } = await getTranslation("cv");
   return (
     <div className="flex flex-col md:flex-row justify-between mb-16">
       <hgroup>
