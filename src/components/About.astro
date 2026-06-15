@@ -2,10 +2,8 @@
 import Icon from "./Icon.astro"
 import SectionHeader from "./SectionHeader.astro"
 import { useTranslations } from "@/i18n/utils"
-import type { Locale } from "@/i18n/config"
 
-const { locale } = Astro.props as { locale: Locale }
-const t = useTranslations(locale, "cv")
+const t = useTranslations()
 ---
 
 <SectionHeader heading={t("about")}>

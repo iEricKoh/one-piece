@@ -4,14 +4,10 @@ import Icon from "./Icon.astro"
 import SectionHeader from "./SectionHeader.astro"
 import TechStack from "./TechStack.astro"
 import { useTranslations } from "@/i18n/utils"
-import type { Locale } from "@/i18n/config"
 
-const { locale } = Astro.props as { locale: Locale }
-const t = useTranslations(locale, "cv")
+const t = useTranslations()
 
-const projects = (
-  await getCollection("sideProjects", ({ data }) => data.locale === locale)
-)
+const projects = (await getCollection("sideProjects"))
   .map((entry) => entry.data)
   .sort((a, b) => a.order - b.order)
 

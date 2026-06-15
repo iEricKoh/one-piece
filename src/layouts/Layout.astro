@@ -1,45 +1,24 @@
 ---
 import "@/styles/global.css"
 import { Font } from "astro:assets"
-import { getRelativeLocaleUrl } from "astro:i18n"
 import Navbar from "@/components/Navbar.astro"
-import { locales, type Locale } from "@/i18n/config"
 
 interface Props {
-  locale: Locale
   title?: string
   description?: string
 }
 
 const {
-  locale,
   title = "Eric Koh - AI-Augmented Full Stack Developer",
   description = "Eric Koh - AI-Augmented Full Stack Developer building interactive web and mobile applications.",
 } = Astro.props
 
-const ogLocale: Record<Locale, string> = { en: "en_US", "zh-CN": "zh_CN" }
-
 const canonical = new URL(Astro.url.pathname, Astro.site)
 const ogImage = new URL("/og.png", Astro.site)
-
-// Logical path with any locale prefix stripped, used to build per-locale alternates.
-const basePath = Astro.url.pathname.replace(/^\/zh-CN/, "") || "/"
-const alternates = locales.map((l) => ({
-  locale: l,
-  // normalizeLocale:false keeps the "zh-CN" casing so the URL matches the
-  // actually generated /zh-CN/ route (otherwise it lowercases to /zh-cn/).
-  href: new URL(
-    getRelativeLocaleUrl(l, basePath === "/" ? "" : basePath, {
-      normalizeLocale: false,
-    }),
-    Astro.site,
-  ).toString(),
-}))
-const defaultHref = alternates.find((a) => a.locale === "en")!.href
 ---
 
 <!doctype html>
-<html lang={locale} dir="ltr">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -56,12 +35,6 @@ const defaultHref = alternates.find((a) => a.locale === "en")!.href
     />
 
     <link rel="canonical" href={canonical} />
-    {
-      alternates.map((a) => (
-        <link rel="alternate" hreflang={a.locale} href={a.href} />
-      ))
-    }
-    <link rel="alternate" hreflang="x-default" href={defaultHref} />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -72,11 +45,7 @@ const defaultHref = alternates.find((a) => a.locale === "en")!.href
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:site_name" content="Eric Koh" />
-    <meta property="og:locale" content={ogLocale[locale]} />
-    <meta
-      property="og:locale:alternate"
-      content={locale === "en" ? "zh_CN" : "en_US"}
-    />
+    <meta property="og:locale" content="en_US" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
