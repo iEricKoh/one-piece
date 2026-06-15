@@ -1,0 +1,61 @@
+---
+import { getCollection } from "astro:content"
+import Icon from "./Icon.astro"
+import SectionHeader from "./SectionHeader.astro"
+import Projects from "./Projects.astro"
+import TechStack from "./TechStack.astro"
+import { useTranslations } from "@/i18n/utils"
+import type { Locale } from "@/i18n/config"
+
+const { locale } = Astro.props as { locale: Locale }
+const t = useTranslations(locale, "cv")
+
+const experiences = (
+  await getCollection("experiences", ({ data }) => data.locale === locale)
+)
+  .map((entry) => entry.data)
+  .sort((a, b) => a.order - b.order)
+---
+
+<SectionHeader heading={t("experience")}>
+  <Icon name="codepen" />
+</SectionHeader>
+<div>
+  {
+    experiences.map((e, i) => (
+      <article
+        class:list={[
+          "md:grid md:grid-cols-3 md:gap-14 py-8 md:py-10",
+          i > 0 && "border-t border-slate-200 dark:border-slate-800",
+        ]}
+      >
+        <div class="grid grid-cols-2 items-baseline md:block mb-4 md:mb-0">
+          <div class="text-2xl md:text-3xl mb-1 md:mb-2">{e.company}</div>
+          <time class="block text-sm text-right md:text-left text-gray-500 dark:text-gray-400">
+            {e.duration}
+          </time>
+        </div>
+        <div class="md:col-span-2">
+          <div class="text-lg md:text-2xl mb-5" data-reveal>
+            {e.position}
+          </div>
+          <ul>
+            {e.desc.map((desc) => (
+              <li>
+                <div class="my-3" data-reveal>
+                  - {desc}
+                </div>
+              </li>
+            ))}
+          </ul>
+          {e.projects.length > 0 && (
+            <Projects projects={e.projects} label={t("projects")} />
+          )}
+          <div class="italic text-sm mt-5">
+            <TechStack stack={e.techStack.join(" / ")} />
+          </div>
+        </div>
+      </article>
+    ))
+  }
+</div>

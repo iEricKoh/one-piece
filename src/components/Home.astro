@@ -1,0 +1,42 @@
+---
+import Info from "./Info.astro"
+import About from "./About.astro"
+import Experiences from "./Experiences.astro"
+import SectionHeader from "./SectionHeader.astro"
+import Icon from "./Icon.astro"
+import Graph from "./Graph.astro"
+import SideProjects from "./SideProjects.astro"
+import { useTranslations } from "@/i18n/utils"
+import type { Locale } from "@/i18n/config"
+
+const { locale } = Astro.props as { locale: Locale }
+const t = useTranslations(locale, "cv")
+---
+
+<main class="app min-h-screen px-4 md:px-10">
+  <div class="max-w-screen-xl m-auto py-12 md:py-16">
+    <Info locale={locale} />
+
+    <section class="mt-16 md:mt-24">
+      <Experiences locale={locale} />
+    </section>
+
+    <section class="mt-16 md:mt-24 grid md:grid-cols-5 md:gap-14 gap-y-12">
+      <div class="md:col-span-3">
+        <About locale={locale} />
+      </div>
+      <div class="md:col-span-2">
+        <SectionHeader heading={t("skills")}>
+          <Icon name="code" />
+        </SectionHeader>
+        <div class="mt-8">
+          <Graph />
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-16 md:mt-24">
+      <SideProjects locale={locale} />
+    </section>
+  </div>
+</main>

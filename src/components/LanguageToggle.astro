@@ -1,0 +1,23 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n"
+import Icon from "./Icon.astro"
+import { defaultLocale, isLocale } from "@/i18n/config"
+
+const current = isLocale(Astro.currentLocale)
+  ? Astro.currentLocale
+  : defaultLocale
+const target = current === "zh-CN" ? "en" : "zh-CN"
+const basePath = Astro.url.pathname.replace(/^\/zh-CN/, "") || "/"
+// normalizeLocale:false preserves the "zh-CN" casing to match the real route.
+const href = getRelativeLocaleUrl(target, basePath === "/" ? "" : basePath, {
+  normalizeLocale: false,
+})
+---
+
+<a
+  href={href}
+  aria-label="Switch language"
+  class="p-2 cursor-pointer rounded-full hover:bg-gray-200 dark:hover:bg-teal-400 transition-all text-2xl"
+>
+  <Icon name="language" />
+</a>

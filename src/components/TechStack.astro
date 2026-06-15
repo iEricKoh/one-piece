@@ -1,0 +1,22 @@
+---
+interface Props {
+  stack: string
+}
+
+const { stack } = Astro.props
+---
+
+<div data-reveal data-techstack>{stack}</div>
+
+<script>
+  import { typewriter } from "@/scripts/typewriter"
+  import { onReveal } from "@/scripts/reveal"
+
+  document.querySelectorAll<HTMLElement>("[data-techstack]").forEach((el) => {
+    const text = el.textContent?.trim() ?? ""
+    // Reserve the rendered height before clearing so typing doesn't shift layout.
+    el.style.minHeight = `${el.offsetHeight}px`
+    el.textContent = ""
+    onReveal(el, () => typewriter(el, [text], { speed: 40 }))
+  })
+</script>

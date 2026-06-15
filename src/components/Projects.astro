@@ -1,0 +1,35 @@
+---
+import Icon from "./Icon.astro"
+import type { Project } from "@/interfaces/experience"
+
+interface Props {
+  projects: Project[]
+  label: string
+}
+
+const { projects, label } = Astro.props
+---
+
+<details class="project-list">
+  <summary class="relative block cursor-pointer">
+    <hr class="absolute w-full top-1/2" />
+    <span
+      class="bg-white dark:bg-slate-900 relative z-10 pr-2 items-center inline-flex text-gray-400 dark:text-white"
+    >
+      <Icon name="chevron" class="chevron inline relative mr-1" size="0.8em" />
+      {label}
+    </span>
+  </summary>
+  <div>
+    {
+      projects.map((proj) => (
+        <dl class="py-2">
+          <dt class="inline">
+            * <strong>{proj.name}:</strong>{" "}
+          </dt>
+          <dd class="inline">{proj.desc}</dd>
+        </dl>
+      ))
+    }
+  </div>
+</details>

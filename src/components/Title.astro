@@ -1,0 +1,43 @@
+---
+import type { Locale } from "@/i18n/config"
+
+const sequences: Record<Locale, string[]> = {
+  en: [
+    "Senior Front End",
+    "Senior Full Stack",
+    "Professional Vibe Coder",
+    "AI-Augmented Full Stack Developer",
+  ],
+  "zh-CN": [
+    "高级前端",
+    "高级全栈",
+    "资深 Vibe Coding 选手",
+    "AI 加持的全栈工程师",
+  ],
+}
+
+const { locale } = Astro.props as { locale: Locale }
+const phrases = sequences[locale] ?? sequences.en
+---
+
+<span
+  class="tw-cursor inline-block"
+  data-title
+  data-phrases={JSON.stringify(phrases)}
+>
+  {phrases[phrases.length - 1]}
+</span>
+
+<script>
+  import { typewriter } from "@/scripts/typewriter"
+
+  document.querySelectorAll<HTMLElement>("[data-title]").forEach((el) => {
+    const phrases: string[] = JSON.parse(el.dataset.phrases ?? "[]")
+    typewriter(el, phrases, {
+      speed: 55,
+      deleteSpeed: 30,
+      pause: 1000,
+      loop: true,
+    })
+  })
+</script>

@@ -1,0 +1,13 @@
+---
+interface Props {
+  heading: string
+}
+
+const { heading } = Astro.props
+---
+
+<h4 class="mb-2 text-xl md:text-3xl flex items-center">
+  <span class="mr-3 inline-flex"><slot /></span>
+  {heading}
+</h4>
+<hr class="mb-5" />

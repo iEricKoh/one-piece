@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+/* Class-based dark mode (toggled on <html>), replacing next-themes default. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+body {
+  font-family:
+    var(--font-inter),
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+}
+
+/* --- Scroll reveal (replaces @react-spring useInView fade) ---
+   Gated behind `.js` so no-JS users and crawlers always see full content. */
+.js [data-reveal] {
+  opacity: 0.35;
+  transition: opacity 0.6s ease;
+}
+.js [data-reveal].in-view {
+  opacity: 1;
+}
+
+/* --- Skill bars (replaces @react-spring width animation) --- */
+.bar {
+  border-radius: 5px;
+  width: var(--bar-width, 0);
+}
+.js .bar {
+  width: 0;
+  transition: width 1s ease;
+}
+.js .bar.in-view {
+  width: var(--bar-width, 0);
+}
+
+/* --- Typewriter blinking cursor --- */
+.tw-cursor::after {
+  content: "|";
+  margin-left: 1px;
+  font-weight: 400;
+  animation: tw-blink 1s step-end infinite;
+}
+@keyframes tw-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* --- Projects accordion (native <details>) --- */
+.project-list summary {
+  list-style: none;
+}
+.project-list summary::-webkit-details-marker {
+  display: none;
+}
+.project-list .chevron {
+  transition: transform 0.2s ease;
+}
+.project-list[open] summary .chevron {
+  transform: rotate(90deg);
+}
+
+/* Smooth expand where the browser supports it (progressive enhancement). */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (interpolate-size: allow-keywords) {
+    :root {
+      interpolate-size: allow-keywords;
+    }
+    .project-list::details-content {
+      height: 0;
+      overflow: hidden;
+      transition:
+        height 0.4s ease,
+        content-visibility 0.4s allow-discrete;
+    }
+    .project-list[open]::details-content {
+      height: auto;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js [data-reveal],
+  .js .bar {
+    transition: none;
+  }
+}

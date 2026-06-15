@@ -1,0 +1,59 @@
+---
+import { getCollection } from "astro:content"
+import Icon from "./Icon.astro"
+import SectionHeader from "./SectionHeader.astro"
+import TechStack from "./TechStack.astro"
+import { useTranslations } from "@/i18n/utils"
+import type { Locale } from "@/i18n/config"
+
+const { locale } = Astro.props as { locale: Locale }
+const t = useTranslations(locale, "cv")
+
+const projects = (
+  await getCollection("sideProjects", ({ data }) => data.locale === locale)
+)
+  .map((entry) => entry.data)
+  .sort((a, b) => a.order - b.order)
+
+const host = (url: string) => new URL(url).host.replace(/^www\./, "")
+---
+
+<SectionHeader heading={t("sideProjects")}>
+  <Icon name="rocket" />
+</SectionHeader>
+<div class="grid md:grid-cols-3 md:gap-14">
+  {
+    projects.map((p) => (
+      <Fragment>
+        <div class="col-span-3 grid grid-cols-2 md:col-span-1 items-baseline w-full md:block">
+          <a
+            href={p.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-2xl md:text-3xl mb-1 md:mb-2 inline-block hover:text-teal-400 transition-colors"
+          >
+            {p.name}
+          </a>
+          <a
+            href={p.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-sm text-right md:text-left text-gray-400 hover:text-teal-400 transition-colors inline-block"
+          >
+            {host(p.url)}
+          </a>
+        </div>
+        <div class="col-span-3 md:col-span-2 mb-12 md:mb-0">
+          <div class="text-base md:text-lg mb-3" data-reveal>
+            {p.desc}
+          </div>
+          {p.techStack.length > 0 && (
+            <div class="italic text-sm mt-5">
+              <TechStack stack={p.techStack.join(" / ")} />
+            </div>
+          )}
+        </div>
+      </Fragment>
+    ))
+  }
+</div>

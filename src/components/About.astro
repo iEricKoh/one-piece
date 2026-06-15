@@ -1,0 +1,16 @@
+---
+import Icon from "./Icon.astro"
+import SectionHeader from "./SectionHeader.astro"
+import { useTranslations } from "@/i18n/utils"
+import type { Locale } from "@/i18n/config"
+
+const { locale } = Astro.props as { locale: Locale }
+const t = useTranslations(locale, "cv")
+---
+
+<SectionHeader heading={t("about")}>
+  <Icon name="user" />
+</SectionHeader>
+<p class="text-lg leading-relaxed" style="white-space: pre-line" data-reveal>
+  {t("intro")}
+</p>
