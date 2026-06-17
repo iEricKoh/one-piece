@@ -26,13 +26,15 @@ const experiences = (await getCollection("experiences"))
         ]}
       >
         <div class="grid grid-cols-2 items-baseline md:block mb-4 md:mb-0">
-          <div class="text-2xl md:text-3xl mb-1 md:mb-2">{e.company}</div>
+          <div class="text-xl md:text-2xl font-medium mb-1 md:mb-2">
+            {e.company}
+          </div>
           <time class="block text-sm text-right md:text-left text-gray-500 dark:text-gray-400">
             {e.duration}
           </time>
         </div>
         <div class="md:col-span-2">
-          <div class="text-lg md:text-2xl mb-5" data-reveal>
+          <div class="text-base md:text-xl mb-5" data-reveal>
             {e.position}
           </div>
           <ul>
