@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# one-piece
 
-## Getting Started
+Personal portfolio / CV site for Eric Koh, built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/). Live at [ierickoh.com](https://www.ierickoh.com).
 
-First, run the development server:
+## Tech stack
+
+- **Astro 6** static site
+- **Tailwind CSS 4** (via `@tailwindcss/vite`)
+- **TypeScript**
+- **Inter** font, self-hosted via Astro's font API (Fontsource provider)
+- Content authored as Astro **content collections**
+- `@astrojs/sitemap` for sitemap generation, `@vercel/analytics` for analytics
+- Deployed on **Vercel**
+
+## Getting started
+
+This project uses **pnpm**.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:4321](http://localhost:4321) to view the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+| Command             | Description                          |
+| ------------------- | ------------------------------------ |
+| `pnpm dev`          | Start the dev server                 |
+| `pnpm build`        | Build the production site to `dist/` |
+| `pnpm preview`      | Preview the production build locally |
+| `pnpm check`        | Type-check with `astro check`        |
+| `pnpm lint`         | Lint with ESLint                     |
+| `pnpm format`       | Format all files with Prettier       |
+| `pnpm format:check` | Verify formatting (run in CI)        |
+| `pnpm og`           | Regenerate the Open Graph image      |
 
-## Learn More
+## Project structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+  components/   UI components (.astro)
+  data/         Content collections (experiences, side-projects)
+  i18n/         Translations and locale utilities
+  interfaces/   Shared TypeScript types
+  layouts/      Page layout + <head> metadata
+  pages/        Routes
+  scripts/      Client-side enhancements (reveal, typewriter)
+  styles/       Global CSS
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Editing content (work experience, side projects) is done through the entries in `src/data/`. Site-wide copy lives in `src/i18n/locales/`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Pushes to `main` deploy automatically via Vercel. The Vercel project framework is set to Astro.
