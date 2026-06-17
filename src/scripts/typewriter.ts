@@ -7,9 +7,37 @@ export interface TypewriterOptions {
   pause?: number
   /** cycle through the phrases forever */
   loop?: boolean
+  /**
+   * Optional predicate; while it returns true the typewriter idles instead of
+   * animating (e.g. when the element is scrolled offscreen). The tab being
+   * hidden is always treated as paused regardless of this.
+   */
+  paused?: () => boolean
 }
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
+
+/**
+ * Resolves immediately unless paused; otherwise waits (without timers) until a
+ * `visibilitychange` or `typewriter:resume` event flips it back to runnable.
+ * Keeps the main thread idle while the tab is hidden or the element is offscreen.
+ */
+function waitWhileRunnable(
+  el: HTMLElement,
+  isPaused: () => boolean,
+): Promise<void> {
+  if (!isPaused()) return Promise.resolve()
+  return new Promise((resolve) => {
+    const check = () => {
+      if (isPaused()) return
+      document.removeEventListener("visibilitychange", check)
+      el.removeEventListener("typewriter:resume", check)
+      resolve()
+    }
+    document.addEventListener("visibilitychange", check)
+    el.addEventListener("typewriter:resume", check)
+  })
+}
 
 /**
  * Tiny dependency-free typewriter. Replaces react-type-animation.
@@ -39,12 +67,16 @@ export function typewriter(
     once: true,
   })
 
+  const isPaused = () => document.hidden || (opts.paused?.() ?? false)
+  const gate = () => waitWhileRunnable(el, isPaused)
+
   async function run() {
     do {
       for (let p = 0; p < phrases.length; p++) {
         const text = phrases[p]
         for (let c = 1; c <= text.length; c++) {
           if (cancelled) return
+          await gate()
           el.textContent = text.slice(0, c)
           await sleep(speed)
         }
@@ -53,6 +85,7 @@ export function typewriter(
         if (loop || !isLast) {
           for (let c = text.length; c >= 0; c--) {
             if (cancelled) return
+            await gate()
             el.textContent = text.slice(0, c)
             await sleep(deleteSpeed)
           }

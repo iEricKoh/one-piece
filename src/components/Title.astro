@@ -20,11 +20,25 @@ const phrases = [
 
   document.querySelectorAll<HTMLElement>("[data-title]").forEach((el) => {
     const phrases: string[] = JSON.parse(el.dataset.phrases ?? "[]")
+
+    // Pause the loop while scrolled offscreen; wake it when it returns.
+    let onScreen = true
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver((entries) => {
+        for (const entry of entries) {
+          onScreen = entry.isIntersecting
+          if (onScreen) el.dispatchEvent(new Event("typewriter:resume"))
+        }
+      })
+      io.observe(el)
+    }
+
     typewriter(el, phrases, {
       speed: 55,
       deleteSpeed: 30,
       pause: 1000,
       loop: true,
+      paused: () => !onScreen,
     })
   })
 </script>
