@@ -4,7 +4,7 @@
     "duration": "Nov 2023 - Present",
     "position": "Senior Frontend Developer",
     "desc": [
-      "Develop core features for the McDonald's Japan delivery platform, from storefront to checkout.",
+      "Develop core features for a global quick-service restaurant brand's delivery platform, from storefront to checkout.",
       "Design and build reusable React components for responsive, accessible, pixel-perfect UIs.",
       "Partner with cross-functional teams to ship scalable, high-performance features.",
       "Use Claude Code daily to accelerate feature development and refactoring."
@@ -12,8 +12,8 @@
     "techStack": ["React", "TypeScript", "Claude Code"],
     "projects": [
       {
-        "name": "McDonald's Japan Delivery Platform",
-        "desc": "Own key storefront and checkout journeys on a high-traffic delivery platform, focusing on accessibility, responsiveness and page performance."
+        "name": "Food Delivery Platform",
+        "desc": "Own key storefront and checkout journeys on a high-traffic delivery platform for a global quick-service restaurant brand, focusing on accessibility, responsiveness and page performance."
       }
     ]
   },
