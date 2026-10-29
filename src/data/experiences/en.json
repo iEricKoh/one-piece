@@ -2,43 +2,44 @@
   {
     "company": "The Plant",
     "duration": "Nov 2023 - Present",
-    "position": "Senior Front End Developer",
+    "position": "Senior Frontend Developer",
     "desc": [
-      "Deliver core features for a large-scale e-commerce platform serving a major international quick-service restaurant brand.",
-      "Build responsive, accessible, and pixel-perfect storefront and checkout experiences grounded in modern best practices.",
-      "Design reusable UI components and partner cross-functionally to ship scalable, high-performance front-end solutions."
+      "Develop core features for the McDonald's Japan delivery platform, from storefront to checkout.",
+      "Design and build reusable React components for responsive, accessible, pixel-perfect UIs.",
+      "Partner with cross-functional teams to ship scalable, high-performance features.",
+      "Use Claude Code daily to accelerate feature development and refactoring."
     ],
     "techStack": ["React", "TypeScript", "Claude Code"],
     "projects": [
       {
-        "name": "E-Commerce Shopping Platform",
-        "desc": "Owned key storefront and checkout journeys for a high-traffic platform behind a global quick-service restaurant brand, focusing on accessibility, responsiveness, and page performance."
+        "name": "McDonald's Japan Delivery Platform",
+        "desc": "Own key storefront and checkout journeys on a high-traffic delivery platform, focusing on accessibility, responsiveness and page performance."
       }
     ]
   },
   {
     "company": "Baopals",
-    "duration": "Jul 2017 - May 2023",
-    "position": "Senior Front End Developer",
+    "duration": "Jun 2017 - Jun 2023",
+    "position": "Lead Front End Developer",
     "desc": [
-      "Responsible for architecting multiple projects from the ground up, seeing them through from inception to successful deployment.",
-      "Leading, mentoring and providing technical guidance to a team of passionate front-end developers.",
-      "Actively engaged in the design and discussion of critical features, making significant contributions to the product's evolution.",
-      "Responsible for code quality and identifying improvements to workflow and operations."
+      "Architected multiple projects from the ground up and saw them through from inception to deployment.",
+      "Led and mentored a team of front-end developers, setting technical direction and reviewing code.",
+      "Defined product requirements and roadmap priorities with stakeholders, turning ideas into user stories.",
+      "Improved code quality and streamlined team workflows."
     ],
     "techStack": ["React", "Redux", "Flutter", "Node.js", "AWS"],
     "projects": [
       {
-        "name": "Shopping Platform(Web)",
-        "desc": "Independently crafted a React-based SPA from the ground up, seamlessly integrating Redux Observable and Bootstrap to elevate both the user interface and overall performance."
+        "name": "Shopping Platform (Web)",
+        "desc": "Independently built a React single-page app from scratch, using Redux Observable and Bootstrap to improve both the interface and performance."
       },
       {
-        "name": "Shopping Platform(App)",
-        "desc": "Solely engineered a cross-platform mobile application using Flutter and Riverpod, ensuring a flawless user experience and functionality across different platforms."
+        "name": "Shopping Platform (App)",
+        "desc": "Single-handedly built a cross-platform mobile app with Flutter and Riverpod, delivering a consistent experience on every platform."
       },
       {
         "name": "Chrome Extension",
-        "desc": "Single-handedly designed and developed a Chrome extension using VanillaJS and Vite, streamlining daily tasks and optimizing operational efficiency."
+        "desc": "Designed and built a Chrome extension with vanilla JavaScript and Vite that streamlined the team's daily operational tasks."
       }
     ]
   },
@@ -47,19 +48,19 @@
     "duration": "Sep 2016 - Jun 2017",
     "position": "Full Stack Developer",
     "desc": [
-      "Developed responsive & cross browser web apps.",
-      "Developed & delivered the HTML, CSS & JS architecture.",
-      "Worked closely with clients from conception to completion."
+      "Built responsive, cross-browser web applications.",
+      "Architected the HTML, CSS and JavaScript front end.",
+      "Partnered with clients from concept through launch."
     ],
     "techStack": ["Angular 2", "React Native", "Node.js", "Koa", "MongoDB"],
     "projects": [
       {
         "name": "Website Builder",
-        "desc": "Conceived and developed a website builder with Angular 2, closely resembling the functionality of weex.com, while also integrating a sophisticated rich text editor seamlessly into the platform."
+        "desc": "Built a website builder in Angular 2, similar to weex.com, with a fully integrated rich text editor."
       },
       {
         "name": "React Native App",
-        "desc": "Single-handedly crafted a React Native mobile application for efficiently managing hardware settings, such as screen brightness and weather settings, for the Laser Egg device."
+        "desc": "Single-handedly built a React Native app for managing Laser Egg device settings such as screen brightness and weather."
       }
     ]
   },
@@ -68,40 +69,40 @@
     "duration": "Jan 2016 - Sep 2016",
     "position": "Senior Front End Developer",
     "desc": [
-      "Consulted on CSS, solving a lot of complex issues.",
-      "Responsible for the RESTful API development.",
-      "Implemented all the UI into resuable Angular components."
+      "Solved complex CSS and layout challenges as the team's go-to CSS consultant.",
+      "Developed the RESTful API in Node.js and Express.",
+      "Built the entire UI as reusable Angular components."
     ],
     "techStack": ["Angular", "Node.js", "Express", "Redis", "MongoDB"],
     "projects": [
       {
         "name": "Dashboard Portal",
-        "desc": "Created a dashboard web application with Angular to display statistics data primarily through charts."
+        "desc": "Built an Angular dashboard that visualizes statistics, primarily through charts."
       },
       {
         "name": "RESTful API Server",
-        "desc": "Designed and built a RESTful API server using Node.js for efficient data handling and API management."
+        "desc": "Designed and built a Node.js RESTful API server for efficient data handling and API management."
       }
     ]
   },
   {
     "company": "Tradesparq",
     "duration": "Sep 2014 - Jan 2016",
-    "position": "Front End Developer",
+    "position": "Front End Developer & Web Designer",
     "desc": [
-      "Designed & built cross browser websites.",
-      "Produced weekly newsletters & managed email campaigns.",
-      "Developed a strong knowledge of accessibility & usability."
+      "Designed and built cross-browser websites.",
+      "Produced weekly newsletters and ran email campaigns.",
+      "Applied accessibility and usability best practices."
     ],
     "techStack": ["Knockout.js", "Angular", "Bootstrap", "Node.js", "Docker"],
     "projects": [
       {
         "name": "Social Platform",
-        "desc": "Focused on implementing reusable components throughout the Tradesparq site to enhance functionality and maintainability."
+        "desc": "Built reusable components across the Tradesparq site to improve functionality and maintainability."
       },
       {
-        "name": "Email Template",
-        "desc": "Designed and created various email templates targeting different user segments to expand the market reach."
+        "name": "Email Templates",
+        "desc": "Designed email templates for different user segments to expand market reach."
       }
     ]
   },
@@ -110,19 +111,19 @@
     "duration": "Nov 2012 - Sep 2014",
     "position": "Software Engineer",
     "desc": [
-      "Contributor and maintainer of SSOE project.",
-      "Developed semantic HTML, CSS, and JS for several projects.",
-      "Improved project performance."
+      "Contributed to and maintained the SSOE project.",
+      "Developed semantic HTML, CSS and JavaScript.",
+      "Improved application performance."
     ],
-    "techStack": ["Java", "Spring", "Structs", "iBATIS", "SQL Server", "JBoss"],
+    "techStack": ["Java", "Spring", "Struts", "iBATIS", "SQL Server", "JBoss"],
     "projects": [
       {
         "name": "SSOE Performance Enhancements",
-        "desc": "Focused on enhancing the performance of a JSP application built with Structs and Java, solving complex issues and implementing improvements."
+        "desc": "Improved the performance of a JSP application built with Java and Struts, solving complex issues along the way."
       },
       {
         "name": "Billing Report Generator",
-        "desc": "Developed an automated system in Java for generating monthly and yearly billing reports."
+        "desc": "Built an automated Java system that generates monthly and yearly billing reports."
       }
     ]
   }

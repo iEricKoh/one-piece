@@ -1,6 +1,6 @@
 # one-piece
 
-Personal portfolio / CV site for Eric Koh, built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/). Live at [ierickoh.com](https://www.ierickoh.com).
+Personal portfolio / CV site for Zimo Xu, built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/). Live at [ierickoh.com](https://www.ierickoh.com).
 
 ## Tech stack
 

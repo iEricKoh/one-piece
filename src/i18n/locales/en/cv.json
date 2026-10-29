@@ -1,9 +1,9 @@
 {
-  "fullname": "Eric Koh",
+  "fullname": "Zimo Xu",
   "about": "ABOUT",
   "experience": "EXPERIENCE",
   "skills": "SKILLS",
   "sideProjects": "SIDE PROJECTS",
-  "intro": "I am a highly driven and passionate web developer with over 10 years of experience building interactive web and mobile applications.\n\nThese days I'm all-in on AI-assisted development. Claude Code and other AI tools are central to how I work, helping me ship faster, take on harder problems, and keep learning every day.\n\nI love diving into new challenges, and I believe the key to progress is always trying new things. Outside of work I'm a yogi at heart, keeping balanced with yoga and fitness while code keeps me curious.",
+  "intro": "I'm a senior frontend engineer with nearly 14 years of experience building accessible, high-performance web and mobile apps with React, TypeScript and Next.js. I bring a product mindset, caring as much about what to build as how to build it.\n\nRight now I'm developing core features for the McDonald's Japan delivery platform at The Plant, working remotely from Porto, Portugal. Before that, I spent six years at Baopals leading a front-end team and helping shape the product.\n\nAI is central to how I work. I use Claude Code every day to plan, build and refactor faster, and I'm currently learning AI agent development with the Vercel AI SDK and MCP.\n\nOutside of work I'm a yogi at heart, keeping balanced with yoga and fitness while code keeps me curious.",
   "projects": "Projects"
 }
